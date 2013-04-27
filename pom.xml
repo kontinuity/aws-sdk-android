@@ -72,24 +72,70 @@
             <scope>provided</scope>
         </dependency>
 	<dependency>
-            <groupId>stax</groupId>
-            <artifactId>stax-api</artifactId>
-            <version>1.0.1</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>stax</groupId>
-            <artifactId>stax</artifactId>
-            <version>1.2.0</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>com.google.android</groupId>
-            <artifactId>android</artifactId>
-            <version>2.3.3</version>
-            <scope>provided</scope>
-        </dependency>	
-    </dependencies>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>[1.1, 1.2)</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.3</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-core-asl</artifactId>
+        <version>[1.8,1.9)</version>
+        <type>jar</type>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-mapper-asl</artifactId>
+        <version>[1.8,1.9)</version>
+        <type>jar</type>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.j256.ormlite</groupId>
+        <artifactId>ormlite-core-awsmc</artifactId>
+        <version>4.48</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/../ormlite-core/target/ormlite-core-awsmc-4.48-SNAPSHOT.jar</systemPath>
+    </dependency>
+    <dependency>
+        <groupId>com.j256.ormlite</groupId>
+        <artifactId>ormlite-android-awsmc</artifactId>
+        <version>4.48</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/../ormlite-android/target/ormlite-android-awsmc-4.48-SNAPSHOT.jar</systemPath>
+    </dependency>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.2.3</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>stax</groupId>
+        <artifactId>stax-api</artifactId>
+        <version>1.0.1</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>stax</groupId>
+        <artifactId>stax</artifactId>
+        <version>1.2.0</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>com.google.android</groupId>
+        <artifactId>android</artifactId>
+        <version>2.3.3</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
 
     <developers>
         <developer>
@@ -141,10 +187,6 @@
                 <include>com.fasterxml.jackson.core:jackson-databind</include>
               </includes>
               <rules>
-		<rule>
-			<pattern>org.apache.http.**</pattern>
-			<result>com.amazonaws.org.apache.http.@1</result>
-		</rule>
 		<rule>
 			<pattern>javax.xml.namespace.**</pattern>
 			<result>com.amazonaws.javax.xml.namespace.@1</result>

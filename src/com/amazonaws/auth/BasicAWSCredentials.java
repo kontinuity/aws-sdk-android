@@ -14,14 +14,21 @@
  */
 package com.amazonaws.auth;
 
+import com.j256.ormlite.field.DatabaseField;
+
 /**
  * Basic implementation of the AWSCredentials interface that allows callers to
  * pass in the AWS access key and secret access in the constructor.
  */
 public class BasicAWSCredentials implements AWSCredentials {
 
-    private final String accessKey;
-    private final String secretKey;
+    @DatabaseField
+    private String accessKey;
+
+    @DatabaseField
+    private String secretKey;
+
+    BasicAWSCredentials() {}
 
     /**
      * Constructs a new BasicAWSCredentials object, with the specified AWS

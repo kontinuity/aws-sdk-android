@@ -13,34 +13,42 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * Represents an Amazon <i>Elastic Block Storage</i> (EBS) volume.
  * </p>
  */
-public class Volume implements Serializable {
+public class Volume extends BaseModel implements Serializable  {
 
     /**
      * The unique ID of this volume.
      */
+    @DatabaseField(id = true)
     private String volumeId;
 
     /**
      * The size of this volume, in gigabytes.
      */
+    @DatabaseField
     private Integer size;
 
     /**
      * Optional snapshot from which this volume was created.
      */
+    @DatabaseField
     private String snapshotId;
 
     /**
      * Availability zone in which this volume was created.
      */
+    @DatabaseField
     private String availabilityZone;
 
     /**
@@ -49,25 +57,31 @@ public class Volume implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
      */
+    @DatabaseField
     private String state;
 
     /**
      * Timestamp when volume creation was initiated.
      */
+    @DatabaseField
     private java.util.Date createTime;
 
     /**
      * Information on what this volume is attached to.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = VolumeAttachment.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachments;
 
     /**
      * A list of tags for the Volume.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
+    @DatabaseField
     private String volumeType;
 
+    @DatabaseField
     private Integer iops;
 
     /**
@@ -96,7 +110,7 @@ public class Volume implements Serializable {
      * @param volumeId The unique ID of this volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -129,7 +143,7 @@ public class Volume implements Serializable {
      * @param size The size of this volume, in gigabytes.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withSize(Integer size) {
         this.size = size;
@@ -162,7 +176,7 @@ public class Volume implements Serializable {
      * @param snapshotId Optional snapshot from which this volume was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -195,7 +209,7 @@ public class Volume implements Serializable {
      * @param availabilityZone Availability zone in which this volume was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -241,7 +255,7 @@ public class Volume implements Serializable {
      * @param state State of this volume (e.g., creating, available).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see VolumeState
      */
@@ -275,7 +289,7 @@ public class Volume implements Serializable {
      * @param state State of this volume (e.g., creating, available).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see VolumeState
      */
@@ -310,7 +324,7 @@ public class Volume implements Serializable {
      * @param createTime Timestamp when volume creation was initiated.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
@@ -353,7 +367,7 @@ public class Volume implements Serializable {
      * @param attachments Information on what this volume is attached to.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withAttachments(VolumeAttachment... attachments) {
         if (getAttachments() == null) setAttachments(new java.util.ArrayList<VolumeAttachment>(attachments.length));
@@ -371,7 +385,7 @@ public class Volume implements Serializable {
      * @param attachments Information on what this volume is attached to.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withAttachments(java.util.Collection<VolumeAttachment> attachments) {
         if (attachments == null) {
@@ -421,7 +435,7 @@ public class Volume implements Serializable {
      * @param tags A list of tags for the Volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -439,7 +453,7 @@ public class Volume implements Serializable {
      * @param tags A list of tags for the Volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -492,7 +506,7 @@ public class Volume implements Serializable {
      * @param volumeType The new value for the VolumeType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see VolumeType
      */
@@ -526,7 +540,7 @@ public class Volume implements Serializable {
      * @param volumeType The new value for the VolumeType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see VolumeType
      */
@@ -561,7 +575,7 @@ public class Volume implements Serializable {
      * @param iops The new value for the Iops property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Volume withIops(Integer iops) {
         this.iops = iops;

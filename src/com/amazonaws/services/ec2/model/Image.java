@@ -13,24 +13,30 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * Represents an <i>Amazon Machine Image</i> (AMI) that can be run on an Amazon EC2 instance.
  * </p>
  */
-public class Image implements Serializable {
+public class Image extends BaseModel implements Serializable  {
 
     /**
      * The unique ID of the AMI.
      */
+    @DatabaseField(id = true)
     private String imageId;
 
     /**
      * The location of the AMI.
      */
+    @DatabaseField
     private String imageLocation;
 
     /**
@@ -42,22 +48,26 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, deregistered
      */
+    @DatabaseField
     private String state;
 
     /**
      * AWS Access Key ID of the image owner.
      */
+    @DatabaseField
     private String ownerId;
 
     /**
      * True if this image has public launch permissions. False if it only has
      * implicit and explicit launch permissions.
      */
+    @DatabaseField
     private Boolean publicValue;
 
     /**
      * Product codes of the AMI.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = ProductCode.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
@@ -66,6 +76,7 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>i386, x86_64
      */
+    @DatabaseField
     private String architecture;
 
     /**
@@ -74,18 +85,21 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>machine, kernel, ramdisk
      */
+    @DatabaseField
     private String imageType;
 
     /**
      * The kernel associated with the image, if any. Only applicable for
      * machine images.
      */
+    @DatabaseField
     private String kernelId;
 
     /**
      * The RAM disk associated with the image, if any. Only applicable for
      * machine images.
      */
+    @DatabaseField
     private String ramdiskId;
 
     /**
@@ -94,6 +108,7 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Windows
      */
+    @DatabaseField
     private String platform;
 
     private String sriovNetSupport;
@@ -101,22 +116,26 @@ public class Image implements Serializable {
     /**
      * The reason for the state change.
      */
+    @DatabaseField(persisterClass = JsonType.class)
     private StateReason stateReason;
 
     /**
      * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
      * account ID that owns the AMI.
      */
+    @DatabaseField
     private String imageOwnerAlias;
 
     /**
      * The name of the AMI that was provided during image creation.
      */
+    @DatabaseField
     private String name;
 
     /**
      * The description of the AMI that was provided during image creation.
      */
+    @DatabaseField
     private String description;
 
     /**
@@ -126,25 +145,31 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      */
+    @DatabaseField
     private String rootDeviceType;
 
     /**
      * The root device name (e.g., <code>/dev/sda1</code>).
      */
+    @DatabaseField
     private String rootDeviceName;
 
     /**
      * Specifies how block devices are exposed to the instance.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = BlockDeviceMapping.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
+    @DatabaseField
     private String virtualizationType;
 
     /**
      * A list of tags for the Image.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
+    @DatabaseField
     private String hypervisor;
 
     /**
@@ -173,7 +198,7 @@ public class Image implements Serializable {
      * @param imageId The unique ID of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withImageId(String imageId) {
         this.imageId = imageId;
@@ -206,7 +231,7 @@ public class Image implements Serializable {
      * @param imageLocation The location of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
@@ -270,7 +295,7 @@ public class Image implements Serializable {
      *         longer available for launching.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see ImageState
      */
@@ -316,7 +341,7 @@ public class Image implements Serializable {
      *         longer available for launching.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see ImageState
      */
@@ -351,7 +376,7 @@ public class Image implements Serializable {
      * @param ownerId AWS Access Key ID of the image owner.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -390,7 +415,7 @@ public class Image implements Serializable {
      *         implicit and explicit launch permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withPublic(Boolean publicValue) {
         this.publicValue = publicValue;
@@ -444,7 +469,7 @@ public class Image implements Serializable {
      * @param productCodes Product codes of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withProductCodes(ProductCode... productCodes) {
         if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
@@ -462,7 +487,7 @@ public class Image implements Serializable {
      * @param productCodes Product codes of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
@@ -515,9 +540,7 @@ public class Image implements Serializable {
      * @param architecture The architecture of the image.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see ArchitectureValues
+     *         together. 
      */
     public Image withArchitecture(String architecture) {
         this.architecture = architecture;
@@ -597,9 +620,7 @@ public class Image implements Serializable {
      * @param imageType The type of image (machine, kernel, or ramdisk).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see ImageTypeValues
+     *         together. 
      */
     public Image withImageType(String imageType) {
         this.imageType = imageType;
@@ -672,7 +693,7 @@ public class Image implements Serializable {
      *         machine images.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -711,7 +732,7 @@ public class Image implements Serializable {
      *         machine images.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
@@ -757,9 +778,7 @@ public class Image implements Serializable {
      * @param platform The operating platform of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see PlatformValues
+     *         together. 
      */
     public Image withPlatform(String platform) {
         this.platform = platform;
@@ -859,7 +878,7 @@ public class Image implements Serializable {
      * @param stateReason The reason for the state change.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withStateReason(StateReason stateReason) {
         this.stateReason = stateReason;
@@ -898,7 +917,7 @@ public class Image implements Serializable {
      *         account ID that owns the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withImageOwnerAlias(String imageOwnerAlias) {
         this.imageOwnerAlias = imageOwnerAlias;
@@ -931,7 +950,7 @@ public class Image implements Serializable {
      * @param name The name of the AMI that was provided during image creation.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withName(String name) {
         this.name = name;
@@ -964,7 +983,7 @@ public class Image implements Serializable {
      * @param description The description of the AMI that was provided during image creation.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withDescription(String description) {
         this.description = description;
@@ -1016,9 +1035,7 @@ public class Image implements Serializable {
      *         instance store root device.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see DeviceType
+     *         together. 
      */
     public Image withRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
@@ -1089,7 +1106,7 @@ public class Image implements Serializable {
      * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
@@ -1132,7 +1149,7 @@ public class Image implements Serializable {
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
@@ -1150,7 +1167,7 @@ public class Image implements Serializable {
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -1203,7 +1220,7 @@ public class Image implements Serializable {
      * @param virtualizationType The new value for the VirtualizationType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see VirtualizationType
      */
@@ -1237,7 +1254,7 @@ public class Image implements Serializable {
      * @param virtualizationType The new value for the VirtualizationType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see VirtualizationType
      */
@@ -1282,7 +1299,7 @@ public class Image implements Serializable {
      * @param tags A list of tags for the Image.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -1300,7 +1317,7 @@ public class Image implements Serializable {
      * @param tags A list of tags for the Image.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Image withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -1353,7 +1370,7 @@ public class Image implements Serializable {
      * @param hypervisor The new value for the Hypervisor property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see HypervisorType
      */
@@ -1387,7 +1404,7 @@ public class Image implements Serializable {
      * @param hypervisor The new value for the Hypervisor property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see HypervisorType
      */

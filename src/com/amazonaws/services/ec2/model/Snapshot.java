@@ -13,24 +13,30 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * Represents a snapshot of an Amazon EC2 EBS volume.
  * </p>
  */
-public class Snapshot implements Serializable {
+public class Snapshot extends BaseModel implements Serializable  {
 
     /**
      * The unique ID of this snapshot.
      */
+    @DatabaseField(id = true)
     private String snapshotId;
 
     /**
      * The ID of the volume from which this snapshot was created.
      */
+    @DatabaseField
     private String volumeId;
 
     /**
@@ -39,42 +45,50 @@ public class Snapshot implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, completed, error
      */
+    @DatabaseField
     private String state;
 
     /**
      * Time stamp when the snapshot was initiated.
      */
+    @DatabaseField
     private java.util.Date startTime;
 
     /**
      * The progress of the snapshot, in percentage.
      */
+    @DatabaseField
     private String progress;
 
     /**
      * AWS Access Key ID of the user who owns the snapshot.
      */
+    @DatabaseField
     private String ownerId;
 
     /**
      * Description of the snapshot.
      */
+    @DatabaseField
     private String description;
 
     /**
      * The size of the volume, in gigabytes.
      */
+    @DatabaseField
     private Integer volumeSize;
 
     /**
      * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
      * account ID that owns the AMI.
      */
+    @DatabaseField
     private String ownerAlias;
 
     /**
      * A list of tags for the Snapshot.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
@@ -103,7 +117,7 @@ public class Snapshot implements Serializable {
      * @param snapshotId The unique ID of this snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -136,7 +150,7 @@ public class Snapshot implements Serializable {
      * @param volumeId The ID of the volume from which this snapshot was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -182,7 +196,7 @@ public class Snapshot implements Serializable {
      * @param state Snapshot state (e.g., pending, completed, or error).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see SnapshotState
      */
@@ -216,7 +230,7 @@ public class Snapshot implements Serializable {
      * @param state Snapshot state (e.g., pending, completed, or error).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see SnapshotState
      */
@@ -251,7 +265,7 @@ public class Snapshot implements Serializable {
      * @param startTime Time stamp when the snapshot was initiated.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -284,7 +298,7 @@ public class Snapshot implements Serializable {
      * @param progress The progress of the snapshot, in percentage.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withProgress(String progress) {
         this.progress = progress;
@@ -317,7 +331,7 @@ public class Snapshot implements Serializable {
      * @param ownerId AWS Access Key ID of the user who owns the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -350,7 +364,7 @@ public class Snapshot implements Serializable {
      * @param description Description of the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withDescription(String description) {
         this.description = description;
@@ -383,7 +397,7 @@ public class Snapshot implements Serializable {
      * @param volumeSize The size of the volume, in gigabytes.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
@@ -422,7 +436,7 @@ public class Snapshot implements Serializable {
      *         account ID that owns the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withOwnerAlias(String ownerAlias) {
         this.ownerAlias = ownerAlias;
@@ -465,7 +479,7 @@ public class Snapshot implements Serializable {
      * @param tags A list of tags for the Snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -483,7 +497,7 @@ public class Snapshot implements Serializable {
      * @param tags A list of tags for the Snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Snapshot withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

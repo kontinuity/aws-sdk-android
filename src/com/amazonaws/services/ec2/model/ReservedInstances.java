@@ -13,37 +13,45 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * A group of Amazon EC2 Reserved Instances purchased by this account.
  * </p>
  */
-public class ReservedInstances implements Serializable {
+public class ReservedInstances extends BaseModel implements Serializable  {
 
     /**
      * The unique ID of the Reserved Instances purchase.
      */
+    @DatabaseField(id = true)
     private String reservedInstancesId;
 
     /**
      * The instance type on which the Reserved Instances can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      */
+    @DatabaseField
     private String instanceType;
 
     /**
      * The Availability Zone in which the Reserved Instances can be used.
      */
+    @DatabaseField
     private String availabilityZone;
 
     /**
      * The date and time the Reserved Instances started.
      */
+    @DatabaseField
     private java.util.Date start;
 
     private java.util.Date end;
@@ -51,21 +59,25 @@ public class ReservedInstances implements Serializable {
     /**
      * The duration of the Reserved Instances, in seconds.
      */
+    @DatabaseField
     private Long duration;
 
     /**
      * The usage price of the Reserved Instances, per hour.
      */
+    @DatabaseField
     private Float usagePrice;
 
     /**
      * The purchase price of the Reserved Instances.
      */
+    @DatabaseField
     private Float fixedPrice;
 
     /**
      * The number of Reserved Instances purchased.
      */
+    @DatabaseField
     private Integer instanceCount;
 
     /**
@@ -75,6 +87,7 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      */
+    @DatabaseField
     private String productDescription;
 
     /**
@@ -83,11 +96,13 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>payment-pending, active, payment-failed, retired
      */
+    @DatabaseField
     private String state;
 
     /**
      * A list of tags for the ReservedInstances.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
@@ -96,6 +111,7 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      */
+    @DatabaseField
     private String instanceTenancy;
 
     /**
@@ -105,6 +121,7 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      */
+    @DatabaseField
     private String currencyCode;
 
     /**
@@ -113,11 +130,13 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      */
+    @DatabaseField
     private String offeringType;
 
     /**
      * The recurring charge tag assigned to the resource.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = RecurringCharge.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringCharges;
 
     /**
@@ -146,7 +165,7 @@ public class ReservedInstances implements Serializable {
      * @param reservedInstancesId The unique ID of the Reserved Instances purchase.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
@@ -157,7 +176,7 @@ public class ReservedInstances implements Serializable {
      * The instance type on which the Reserved Instances can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @return The instance type on which the Reserved Instances can be used.
      *
@@ -171,7 +190,7 @@ public class ReservedInstances implements Serializable {
      * The instance type on which the Reserved Instances can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type on which the Reserved Instances can be used.
      *
@@ -187,12 +206,12 @@ public class ReservedInstances implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type on which the Reserved Instances can be used.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see InstanceType
      */
@@ -205,7 +224,7 @@ public class ReservedInstances implements Serializable {
      * The instance type on which the Reserved Instances can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type on which the Reserved Instances can be used.
      *
@@ -221,12 +240,12 @@ public class ReservedInstances implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type on which the Reserved Instances can be used.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see InstanceType
      */
@@ -261,7 +280,7 @@ public class ReservedInstances implements Serializable {
      * @param availabilityZone The Availability Zone in which the Reserved Instances can be used.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -294,7 +313,7 @@ public class ReservedInstances implements Serializable {
      * @param start The date and time the Reserved Instances started.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withStart(java.util.Date start) {
         this.start = start;
@@ -360,7 +379,7 @@ public class ReservedInstances implements Serializable {
      * @param duration The duration of the Reserved Instances, in seconds.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withDuration(Long duration) {
         this.duration = duration;
@@ -393,7 +412,7 @@ public class ReservedInstances implements Serializable {
      * @param usagePrice The usage price of the Reserved Instances, per hour.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withUsagePrice(Float usagePrice) {
         this.usagePrice = usagePrice;
@@ -426,7 +445,7 @@ public class ReservedInstances implements Serializable {
      * @param fixedPrice The purchase price of the Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withFixedPrice(Float fixedPrice) {
         this.fixedPrice = fixedPrice;
@@ -459,7 +478,7 @@ public class ReservedInstances implements Serializable {
      * @param instanceCount The number of Reserved Instances purchased.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
@@ -511,9 +530,7 @@ public class ReservedInstances implements Serializable {
      *         Unix/Linux).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see RIProductDescription
+     *         together. 
      */
     public ReservedInstances withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -597,9 +614,7 @@ public class ReservedInstances implements Serializable {
      * @param state The state of the Reserved Instances purchase.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see ReservedInstanceState
+     *         together. 
      */
     public ReservedInstances withState(String state) {
         this.state = state;
@@ -676,7 +691,7 @@ public class ReservedInstances implements Serializable {
      * @param tags A list of tags for the ReservedInstances.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -694,7 +709,7 @@ public class ReservedInstances implements Serializable {
      * @param tags A list of tags for the ReservedInstances.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -747,9 +762,7 @@ public class ReservedInstances implements Serializable {
      * @param instanceTenancy The tenancy of the reserved instance (ex: default or dedicated).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see Tenancy
+     *         together. 
      */
     public ReservedInstances withInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
@@ -835,9 +848,7 @@ public class ReservedInstances implements Serializable {
      *         standard (e.g., USD, JPY).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see CurrencyCodeValues
+     *         together. 
      */
     public ReservedInstances withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -921,9 +932,7 @@ public class ReservedInstances implements Serializable {
      * @param offeringType The Reserved Instance offering type.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see OfferingTypeValues
+     *         together. 
      */
     public ReservedInstances withOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -1000,7 +1009,7 @@ public class ReservedInstances implements Serializable {
      * @param recurringCharges The recurring charge tag assigned to the resource.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withRecurringCharges(RecurringCharge... recurringCharges) {
         if (getRecurringCharges() == null) setRecurringCharges(new java.util.ArrayList<RecurringCharge>(recurringCharges.length));
@@ -1018,7 +1027,7 @@ public class ReservedInstances implements Serializable {
      * @param recurringCharges The recurring charge tag assigned to the resource.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public ReservedInstances withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
@@ -1130,6 +1139,5 @@ public class ReservedInstances implements Serializable {
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false) return false; 
         return true;
     }
-    
 }
     

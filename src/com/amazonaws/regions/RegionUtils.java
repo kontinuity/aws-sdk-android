@@ -163,7 +163,7 @@ public class RegionUtils {
      *            (This should be disabled when regions file override is being
      *            used.)
      */
-    private static void initRegions(InputStream regionsFile, boolean enableEndpointVerification) {
+    public static void initRegions(InputStream regionsFile) {
         try {
             RegionMetadataParser parser = new RegionMetadataParser();
             regions = parser.parseRegionMetadata(regionsFile, enableEndpointVerification);

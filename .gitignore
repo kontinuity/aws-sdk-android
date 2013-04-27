@@ -17,3 +17,12 @@ Thumbs.db
 ######################
 target
 *.jar
+bin
+gen
+
+# Editors #
+#####################
+.idea
+*.iml
+
+local.properties

@@ -13,42 +13,54 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * An Amazon EC2 security group, describing how EC2 instances in this group can receive network traffic.
  * </p>
  */
-public class SecurityGroup implements Serializable {
+public class SecurityGroup extends BaseModel implements Serializable  {
 
     /**
      * The AWS Access Key ID of the owner of the security group.
      */
+    @DatabaseField
     private String ownerId;
 
     /**
      * The name of this security group.
      */
+    @DatabaseField
     private String groupName;
 
+    @DatabaseField(id = true)
     private String groupId;
 
     /**
      * The description of this security group.
      */
+    @DatabaseField
     private String description;
 
     /**
      * The permissions enabled for this security group.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = IpPermission.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = IpPermission.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissionsEgress;
 
+    @DatabaseField
     private String vpcId;
 
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
@@ -77,7 +89,7 @@ public class SecurityGroup implements Serializable {
      * @param ownerId The AWS Access Key ID of the owner of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -110,7 +122,7 @@ public class SecurityGroup implements Serializable {
      * @param groupName The name of this security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withGroupName(String groupName) {
         this.groupName = groupName;
@@ -143,7 +155,7 @@ public class SecurityGroup implements Serializable {
      * @param groupId The new value for the GroupId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withGroupId(String groupId) {
         this.groupId = groupId;
@@ -176,7 +188,7 @@ public class SecurityGroup implements Serializable {
      * @param description The description of this security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withDescription(String description) {
         this.description = description;
@@ -219,7 +231,7 @@ public class SecurityGroup implements Serializable {
      * @param ipPermissions The permissions enabled for this security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withIpPermissions(IpPermission... ipPermissions) {
         if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>(ipPermissions.length));
@@ -237,7 +249,7 @@ public class SecurityGroup implements Serializable {
      * @param ipPermissions The permissions enabled for this security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -287,7 +299,7 @@ public class SecurityGroup implements Serializable {
      * @param ipPermissionsEgress The new value for the IpPermissionsEgress property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withIpPermissionsEgress(IpPermission... ipPermissionsEgress) {
         if (getIpPermissionsEgress() == null) setIpPermissionsEgress(new java.util.ArrayList<IpPermission>(ipPermissionsEgress.length));
@@ -305,7 +317,7 @@ public class SecurityGroup implements Serializable {
      * @param ipPermissionsEgress The new value for the IpPermissionsEgress property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withIpPermissionsEgress(java.util.Collection<IpPermission> ipPermissionsEgress) {
         if (ipPermissionsEgress == null) {
@@ -345,7 +357,7 @@ public class SecurityGroup implements Serializable {
      * @param vpcId The new value for the VpcId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -388,7 +400,7 @@ public class SecurityGroup implements Serializable {
      * @param tags The new value for the Tags property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -406,7 +418,7 @@ public class SecurityGroup implements Serializable {
      * @param tags The new value for the Tags property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public SecurityGroup withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

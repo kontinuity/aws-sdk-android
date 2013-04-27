@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
 
 import java.io.Serializable;
 
@@ -22,11 +24,12 @@ import java.io.Serializable;
  * physically located close enough to support HPC features, such as higher IO network connections between instances in the group.
  * </p>
  */
-public class PlacementGroup implements Serializable {
+public class PlacementGroup extends BaseModel implements Serializable  {
 
     /**
      * The name of this <code>PlacementGroup</code>.
      */
+    @DatabaseField(id = true)
     private String groupName;
 
     /**
@@ -36,6 +39,7 @@ public class PlacementGroup implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>cluster
      */
+    @DatabaseField
     private String strategy;
 
     /**
@@ -44,6 +48,7 @@ public class PlacementGroup implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      */
+    @DatabaseField
     private String state;
 
     /**
@@ -89,7 +94,7 @@ public class PlacementGroup implements Serializable {
      * @param groupName The name of this <code>PlacementGroup</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public PlacementGroup withGroupName(String groupName) {
         this.groupName = groupName;
@@ -141,7 +146,7 @@ public class PlacementGroup implements Serializable {
      *         <code>PlacementGroup</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see PlacementStrategy
      */
@@ -179,7 +184,7 @@ public class PlacementGroup implements Serializable {
      *         <code>PlacementGroup</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see PlacementStrategy
      */
@@ -227,7 +232,7 @@ public class PlacementGroup implements Serializable {
      * @param state The state of this <code>PlacementGroup</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see PlacementGroupState
      */
@@ -261,7 +266,7 @@ public class PlacementGroup implements Serializable {
      * @param state The state of this <code>PlacementGroup</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see PlacementGroupState
      */

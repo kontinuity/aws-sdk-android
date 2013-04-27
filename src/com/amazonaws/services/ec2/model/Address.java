@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
 
 import java.io.Serializable;
 
@@ -21,28 +23,36 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class Address implements Serializable {
+public class Address extends BaseModel implements Serializable  {
 
     /**
      * 
      */
+    @DatabaseField
     private String instanceId;
 
     /**
      * 
      */
+    @DatabaseField(id = true)
     private String publicIp;
 
+    @DatabaseField
     private String allocationId;
 
+    @DatabaseField
     private String associationId;
 
+    @DatabaseField
     private String domain;
 
+    @DatabaseField
     private String networkInterfaceId;
 
+    @DatabaseField
     private String networkInterfaceOwnerId;
 
+    @DatabaseField
     private String privateIpAddress;
 
     /**
@@ -71,7 +81,7 @@ public class Address implements Serializable {
      * @param instanceId 
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Address withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -104,7 +114,7 @@ public class Address implements Serializable {
      * @param publicIp 
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Address withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -137,7 +147,7 @@ public class Address implements Serializable {
      * @param allocationId The new value for the AllocationId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Address withAllocationId(String allocationId) {
         this.allocationId = allocationId;
@@ -170,7 +180,7 @@ public class Address implements Serializable {
      * @param associationId The new value for the AssociationId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Address withAssociationId(String associationId) {
         this.associationId = associationId;
@@ -216,7 +226,7 @@ public class Address implements Serializable {
      * @param domain The new value for the Domain property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see DomainType
      */
@@ -250,7 +260,7 @@ public class Address implements Serializable {
      * @param domain The new value for the Domain property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      *
      * @see DomainType
      */
@@ -285,7 +295,7 @@ public class Address implements Serializable {
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Address withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -323,7 +333,7 @@ public class Address implements Serializable {
      *         object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Address withNetworkInterfaceOwnerId(String networkInterfaceOwnerId) {
         this.networkInterfaceOwnerId = networkInterfaceOwnerId;
@@ -356,7 +366,7 @@ public class Address implements Serializable {
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together.
+     *         together. 
      */
     public Address withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
