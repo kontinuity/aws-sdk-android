@@ -14,12 +14,14 @@
  */
 package com.amazonaws.services.ec2.model;
 
+import com.amazonaws.services.cloudwatch.model.Datapoint;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
@@ -253,6 +255,12 @@ public class Instance  implements Serializable  {
     private Boolean ebsOptimized;
 
     private String sriovNetSupport;
+
+    /**
+     * Instance datapoints as json
+     */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Datapoint.class)
+    private List<Datapoint> hourlyAverageCPUUtilization;
 
     /**
      * Unique ID of the instance launched.
@@ -2316,6 +2324,13 @@ public class Instance  implements Serializable  {
         if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
         return true;
     }
-    
+
+    public List<Datapoint> getHourlyAverageCPUUtilization() {
+        return hourlyAverageCPUUtilization;
+    }
+
+    public void setHourlyAverageCPUUtilization(List<Datapoint> hourlyAverageCPUUtilization) {
+        this.hourlyAverageCPUUtilization = hourlyAverageCPUUtilization;
+    }
 }
     
