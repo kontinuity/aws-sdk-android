@@ -19,6 +19,7 @@ import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Spot Instance Request
@@ -84,6 +85,9 @@ public class SpotInstanceRequest  implements Serializable  {
      */
     @DatabaseField
     private String launchedAvailabilityZone;
+
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = SpotPrice.class)
+    private java.util.List<SpotPrice> priceHistory;
 
     /**
      * Returns the value of the SpotInstanceRequestId property for this
@@ -898,6 +902,14 @@ public class SpotInstanceRequest  implements Serializable  {
 
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
+    }
+
+    public List<SpotPrice> getPriceHistory() {
+        return priceHistory;
+    }
+
+    public void setPriceHistory(List<SpotPrice> priceHistory) {
+        this.priceHistory = priceHistory;
     }
 }
     
