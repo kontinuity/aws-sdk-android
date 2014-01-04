@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(com.amazonaws.services.identitymanagement.model.ChangePasswordRequest) ChangePassword operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest) ChangePassword operation}.
  * <p>
  * Changes the password of the IAM user calling <code>ChangePassword</code> . The root account password is not affected by this action. For information
- * about modifying passwords, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a> .
+ * about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(com.amazonaws.services.identitymanagement.model.ChangePasswordRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest)
  */
-public class ChangePasswordRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ChangePasswordRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String oldPassword;
 
@@ -45,7 +45,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
     public String getOldPassword() {
         return oldPassword;
     }
-
+    
     /**
      * Sets the value of the OldPassword property for this object.
      * <p>
@@ -58,7 +58,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
     public void setOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
     }
-
+    
     /**
      * Sets the value of the OldPassword property for this object.
      * <p>
@@ -70,14 +70,13 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
      *
      * @param oldPassword The new value for the OldPassword property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ChangePasswordRequest withOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
         return this;
     }
-
 
     /**
      * Returns the value of the NewPassword property for this object.
@@ -91,7 +90,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
     public String getNewPassword() {
         return newPassword;
     }
-
+    
     /**
      * Sets the value of the NewPassword property for this object.
      * <p>
@@ -104,7 +103,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
     }
-
+    
     /**
      * Sets the value of the NewPassword property for this object.
      * <p>
@@ -116,7 +115,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
      *
      * @param newPassword The new value for the NewPassword property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ChangePasswordRequest withNewPassword(String newPassword) {
@@ -124,20 +123,19 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOldPassword() != null) sb.append("OldPassword: " + getOldPassword() + ",");    	
+        sb.append("{");
+        if (getOldPassword() != null) sb.append("OldPassword: " + getOldPassword() + ",");
         if (getNewPassword() != null) sb.append("NewPassword: " + getNewPassword() );
         sb.append("}");
         return sb.toString();

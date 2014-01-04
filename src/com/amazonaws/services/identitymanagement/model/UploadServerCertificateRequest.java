@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(com.amazonaws.services.identitymanagement.model.UploadServerCertificateRequest) UploadServerCertificate operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest) UploadServerCertificate operation}.
  * <p>
  * Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private key, and an
  * optional certificate chain, which should all be PEM-encoded.
  * </p>
  * <p>
  * For information about the number of server certificates you can upload, see <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
  * Identity and Access Management</i> .
  * </p>
  * <p>
@@ -35,14 +35,14 @@ import java.io.Serializable;
  * the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(com.amazonaws.services.identitymanagement.model.UploadServerCertificateRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest)
  */
-public class UploadServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UploadServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -96,12 +96,12 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public UploadServerCertificateRequest() {}
-
+    
     /**
      * Constructs a new UploadServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param serverCertificateName The name for the server certificate. Do
      * not include the path in this value.
      * @param certificateBody The contents of the public key certificate in
@@ -110,17 +110,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      * format.
      */
     public UploadServerCertificateRequest(String serverCertificateName, String certificateBody, String privateKey) {
-        this.serverCertificateName = serverCertificateName;
-        this.certificateBody = certificateBody;
-        this.privateKey = privateKey;
+        setServerCertificateName(serverCertificateName);
+        setCertificateBody(certificateBody);
+        setPrivateKey(privateKey);
     }
-
-
 
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -131,7 +129,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @return The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -139,11 +137,11 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getPath() {
         return path;
     }
-
+    
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -154,7 +152,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -162,11 +160,11 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setPath(String path) {
         this.path = path;
     }
-
+    
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -179,19 +177,18 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UploadServerCertificateRequest withPath(String path) {
         this.path = path;
         return this;
     }
-
 
     /**
      * The name for the server certificate. Do not include the path in this
@@ -207,7 +204,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getServerCertificateName() {
         return serverCertificateName;
     }
-
+    
     /**
      * The name for the server certificate. Do not include the path in this
      * value.
@@ -222,7 +219,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
-
+    
     /**
      * The name for the server certificate. Do not include the path in this
      * value.
@@ -236,14 +233,13 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      * @param serverCertificateName The name for the server certificate. Do not include the path in this
      *         value.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UploadServerCertificateRequest withServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
         return this;
     }
-
 
     /**
      * The contents of the public key certificate in PEM-encoded format.
@@ -257,7 +253,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getCertificateBody() {
         return certificateBody;
     }
-
+    
     /**
      * The contents of the public key certificate in PEM-encoded format.
      * <p>
@@ -270,7 +266,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
-
+    
     /**
      * The contents of the public key certificate in PEM-encoded format.
      * <p>
@@ -282,14 +278,13 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param certificateBody The contents of the public key certificate in PEM-encoded format.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UploadServerCertificateRequest withCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
         return this;
     }
-
 
     /**
      * The contents of the private key in PEM-encoded format.
@@ -303,7 +298,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getPrivateKey() {
         return privateKey;
     }
-
+    
     /**
      * The contents of the private key in PEM-encoded format.
      * <p>
@@ -316,7 +311,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
-
+    
     /**
      * The contents of the private key in PEM-encoded format.
      * <p>
@@ -328,14 +323,13 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param privateKey The contents of the private key in PEM-encoded format.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UploadServerCertificateRequest withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
     }
-
 
     /**
      * The contents of the certificate chain. This is typically a
@@ -351,7 +345,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getCertificateChain() {
         return certificateChain;
     }
-
+    
     /**
      * The contents of the certificate chain. This is typically a
      * concatenation of the PEM-encoded public key certificates of the chain.
@@ -366,7 +360,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
     }
-
+    
     /**
      * The contents of the certificate chain. This is typically a
      * concatenation of the PEM-encoded public key certificates of the chain.
@@ -380,7 +374,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      * @param certificateChain The contents of the certificate chain. This is typically a
      *         concatenation of the PEM-encoded public key certificates of the chain.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UploadServerCertificateRequest withCertificateChain(String certificateChain) {
@@ -388,23 +382,22 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");    	
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
-        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");
+        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ",");
         if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() );
         sb.append("}");
         return sb.toString();

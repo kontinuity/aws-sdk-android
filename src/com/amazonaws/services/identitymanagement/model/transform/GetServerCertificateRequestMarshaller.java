@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
-import com.amazonaws.services.identitymanagement.model.GetServerCertificateRequest;
+import com.amazonaws.DefaultRequest;
+import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
@@ -29,8 +33,8 @@ public class GetServerCertificateRequestMarshaller implements Marshaller<Request
     public Request<GetServerCertificateRequest> marshall(GetServerCertificateRequest getServerCertificateRequest) {
 
         if (getServerCertificateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetServerCertificateRequest> request = new DefaultRequest<GetServerCertificateRequest>(getServerCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetServerCertificate");
@@ -39,7 +43,6 @@ public class GetServerCertificateRequestMarshaller implements Marshaller<Request
         if (getServerCertificateRequest.getServerCertificateName() != null) {
             request.addParameter("ServerCertificateName", StringUtils.fromString(getServerCertificateRequest.getServerCertificateName()));
         }
-
 
         return request;
     }

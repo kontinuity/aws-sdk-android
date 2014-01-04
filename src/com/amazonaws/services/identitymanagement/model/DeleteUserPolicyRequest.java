@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(com.amazonaws.services.identitymanagement.model.DeleteUserPolicyRequest) DeleteUserPolicy operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest) DeleteUserPolicy operation}.
  * <p>
  * Deletes the specified policy associated with the specified user.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(com.amazonaws.services.identitymanagement.model.DeleteUserPolicyRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest)
  */
-public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user the policy is associated with.
@@ -51,21 +51,19 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public DeleteUserPolicyRequest() {}
-
+    
     /**
      * Constructs a new DeleteUserPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user the policy is associated with.
      * @param policyName Name of the policy document to delete.
      */
     public DeleteUserPolicyRequest(String userName, String policyName) {
-        this.userName = userName;
-        this.policyName = policyName;
+        setUserName(userName);
+        setPolicyName(policyName);
     }
-
-
 
     /**
      * Name of the user the policy is associated with.
@@ -79,7 +77,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user the policy is associated with.
      * <p>
@@ -92,7 +90,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user the policy is associated with.
      * <p>
@@ -104,14 +102,13 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
      *
      * @param userName Name of the user the policy is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DeleteUserPolicyRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * Name of the policy document to delete.
@@ -125,7 +122,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
     public String getPolicyName() {
         return policyName;
     }
-
+    
     /**
      * Name of the policy document to delete.
      * <p>
@@ -138,7 +135,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
-
+    
     /**
      * Name of the policy document to delete.
      * <p>
@@ -150,7 +147,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
      *
      * @param policyName Name of the policy document to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DeleteUserPolicyRequest withPolicyName(String policyName) {
@@ -158,20 +155,19 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

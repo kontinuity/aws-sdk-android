@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,21 +14,21 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccessKeys(com.amazonaws.services.identitymanagement.model.ListAccessKeysRequest) ListAccessKeys operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccessKeys(ListAccessKeysRequest) ListAccessKeys operation}.
  * <p>
- * Returns information about the Access Key IDs associated with the specified user. If there are none, the action returns an empty list.
+ * Returns information about the access key IDs associated with the specified user. If there are none, the action returns an empty list.
  * </p>
  * <p>
  * Although each user is limited to a small number of keys, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code>
  * parameters.
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS Access Key ID used to sign the request.
+ * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request.
  * Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if the AWS account has no
  * associated users.
  * </p>
@@ -36,9 +36,9 @@ import java.io.Serializable;
  * <b>NOTE:</b>To ensure the security of your AWS account, the secret access key is accessible only during key and user creation.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccessKeys(com.amazonaws.services.identitymanagement.model.ListAccessKeysRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccessKeys(ListAccessKeysRequest)
  */
-public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user.
@@ -65,7 +65,8 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      * Use this parameter only when paginating results to indicate the
      * maximum number of keys you want in the response. If there are
      * additional keys beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -77,7 +78,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public ListAccessKeysRequest() {}
-
+    
     /**
      * Name of the user.
      * <p>
@@ -90,7 +91,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user.
      * <p>
@@ -103,7 +104,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user.
      * <p>
@@ -115,14 +116,13 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      *
      * @param userName Name of the user.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListAccessKeysRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * Use this parameter only when paginating results, and only in a
@@ -142,7 +142,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
     public String getMarker() {
         return marker;
     }
-
+    
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -161,7 +161,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
+    
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -179,7 +179,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListAccessKeysRequest withMarker(String marker) {
@@ -187,12 +187,12 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
         return this;
     }
 
-
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of keys you want in the response. If there are
      * additional keys beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -200,17 +200,19 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      * @return Use this parameter only when paginating results to indicate the
      *         maximum number of keys you want in the response. If there are
      *         additional keys beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
     }
-
+    
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of keys you want in the response. If there are
      * additional keys beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -218,17 +220,19 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of keys you want in the response. If there are
      *         additional keys beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
-
+    
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of keys you want in the response. If there are
      * additional keys beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -238,9 +242,10 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of keys you want in the response. If there are
      *         additional keys beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListAccessKeysRequest withMaxItems(Integer maxItems) {
@@ -248,21 +253,20 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

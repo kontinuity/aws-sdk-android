@@ -16,21 +16,31 @@ package com.amazonaws.http;
 
 import com.amazonaws.ClientConfiguration;
 import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.ProtocolException;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.params.HttpClientParams;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.conn.scheme.SchemeLayeredSocketFactory;
+import org.apache.http.conn.scheme.SchemeSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 
 /** Responsible for creating and configuring instances of Apache HttpClient4. */
 class HttpClientFactory {
@@ -101,23 +111,23 @@ class HttpClientFactory {
      * less strict about the Location header to account for S3 not sending the Location
      * header with 301 responses.
      */
-    private static final class LocationHeaderNotRequiredRedirectStrategy
-            extends DefaultRedirectStrategy {
-
-        @Override
-        public boolean isRedirected(HttpRequest request,
-                HttpResponse response, HttpContext context) throws ProtocolException {
-            int statusCode = response.getStatusLine().getStatusCode();
-            Header locationHeader = response.getFirstHeader("location");
-
-            // Instead of throwing a ProtocolException in this case, just
-            // return false to indicate that this is not redirected
-            if (locationHeader == null &&
-                statusCode == HttpStatus.SC_MOVED_PERMANENTLY) return false;
-
-            return super.isRedirected(request, response, context);
-        }
-    }
+//    private static final class LocationHeaderNotRequiredRedirectStrategy
+//            extends DefaultRedirectStrategy {
+//
+//        @Override
+//        public boolean isRedirected(HttpRequest request,
+//                HttpResponse response, HttpContext context) throws ProtocolException {
+//            int statusCode = response.getStatusLine().getStatusCode();
+//            Header locationHeader = response.getFirstHeader("location");
+//
+//            // Instead of throwing a ProtocolException in this case, just
+//            // return false to indicate that this is not redirected
+//            if (locationHeader == null &&
+//                statusCode == HttpStatus.SC_MOVED_PERMANENTLY) return false;
+//
+//            return super.isRedirected(request, response, context);
+//        }
+//    }
 
     /**
      * Simple implementation of SchemeSocketFactory (and

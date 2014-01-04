@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,22 +14,22 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(com.amazonaws.services.identitymanagement.model.GetUserRequest) GetUser operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest) GetUser operation}.
  * <p>
- * Retrieves information about the specified user, including the user's path, GUID, and ARN.
+ * Retrieves information about the specified user, including the user's path, unique ID, and ARN.
  * </p>
  * <p>
- * If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request.
+ * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(com.amazonaws.services.identitymanagement.model.GetUserRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest)
  */
-public class GetUserRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetUserRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user to get information about. <p>This parameter is
@@ -47,7 +47,7 @@ public class GetUserRequest extends AmazonWebServiceRequest  implements Serializ
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public GetUserRequest() {}
-
+    
     /**
      * Name of the user to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the user making the
@@ -64,7 +64,7 @@ public class GetUserRequest extends AmazonWebServiceRequest  implements Serializ
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the user making the
@@ -81,7 +81,7 @@ public class GetUserRequest extends AmazonWebServiceRequest  implements Serializ
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the user making the
@@ -97,7 +97,7 @@ public class GetUserRequest extends AmazonWebServiceRequest  implements Serializ
      *         optional. If it is not included, it defaults to the user making the
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public GetUserRequest withUserName(String userName) {
@@ -105,19 +105,18 @@ public class GetUserRequest extends AmazonWebServiceRequest  implements Serializ
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

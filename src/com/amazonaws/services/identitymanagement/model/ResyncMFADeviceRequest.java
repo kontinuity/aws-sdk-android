@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#resyncMFADevice(com.amazonaws.services.identitymanagement.model.ResyncMFADeviceRequest) ResyncMFADevice operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#resyncMFADevice(ResyncMFADeviceRequest) ResyncMFADevice operation}.
  * <p>
  * Synchronizes the specified MFA device with AWS servers.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#resyncMFADevice(com.amazonaws.services.identitymanagement.model.ResyncMFADeviceRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#resyncMFADevice(ResyncMFADeviceRequest)
  */
-public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose MFA device you want to resynchronize.
@@ -69,12 +69,12 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public ResyncMFADeviceRequest() {}
-
+    
     /**
      * Constructs a new ResyncMFADeviceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user whose MFA device you want to
      * resynchronize.
      * @param serialNumber Serial number that uniquely identifies the MFA
@@ -85,13 +85,11 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * the device.
      */
     public ResyncMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
-        this.userName = userName;
-        this.serialNumber = serialNumber;
-        this.authenticationCode1 = authenticationCode1;
-        this.authenticationCode2 = authenticationCode2;
+        setUserName(userName);
+        setSerialNumber(serialNumber);
+        setAuthenticationCode1(authenticationCode1);
+        setAuthenticationCode2(authenticationCode2);
     }
-
-
 
     /**
      * Name of the user whose MFA device you want to resynchronize.
@@ -105,7 +103,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user whose MFA device you want to resynchronize.
      * <p>
@@ -118,7 +116,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user whose MFA device you want to resynchronize.
      * <p>
@@ -130,14 +128,13 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param userName Name of the user whose MFA device you want to resynchronize.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ResyncMFADeviceRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * Serial number that uniquely identifies the MFA device.
@@ -151,7 +148,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getSerialNumber() {
         return serialNumber;
     }
-
+    
     /**
      * Serial number that uniquely identifies the MFA device.
      * <p>
@@ -164,7 +161,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
-
+    
     /**
      * Serial number that uniquely identifies the MFA device.
      * <p>
@@ -176,14 +173,13 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param serialNumber Serial number that uniquely identifies the MFA device.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ResyncMFADeviceRequest withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
     }
-
 
     /**
      * An authentication code emitted by the device.
@@ -197,7 +193,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getAuthenticationCode1() {
         return authenticationCode1;
     }
-
+    
     /**
      * An authentication code emitted by the device.
      * <p>
@@ -210,7 +206,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
     }
-
+    
     /**
      * An authentication code emitted by the device.
      * <p>
@@ -222,14 +218,13 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param authenticationCode1 An authentication code emitted by the device.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ResyncMFADeviceRequest withAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
         return this;
     }
-
 
     /**
      * A subsequent authentication code emitted by the device.
@@ -243,7 +238,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getAuthenticationCode2() {
         return authenticationCode2;
     }
-
+    
     /**
      * A subsequent authentication code emitted by the device.
      * <p>
@@ -256,7 +251,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setAuthenticationCode2(String authenticationCode2) {
         this.authenticationCode2 = authenticationCode2;
     }
-
+    
     /**
      * A subsequent authentication code emitted by the device.
      * <p>
@@ -268,7 +263,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param authenticationCode2 A subsequent authentication code emitted by the device.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ResyncMFADeviceRequest withAuthenticationCode2(String authenticationCode2) {
@@ -276,22 +271,21 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
-        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
+        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");
         if (getAuthenticationCode2() != null) sb.append("AuthenticationCode2: " + getAuthenticationCode2() );
         sb.append("}");
         return sb.toString();

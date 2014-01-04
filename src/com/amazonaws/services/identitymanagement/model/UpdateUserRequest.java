@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(com.amazonaws.services.identitymanagement.model.UpdateUserRequest) UpdateUser operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest) UpdateUser operation}.
  * <p>
  * Updates the name and/or the path of the specified user.
  * </p>
@@ -33,9 +33,9 @@ import java.io.Serializable;
  * about permissions, see Permissions and Policies.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(com.amazonaws.services.identitymanagement.model.UpdateUserRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest)
  */
-public class UpdateUserRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateUserRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user to update. If you're changing the name of the user,
@@ -72,20 +72,18 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public UpdateUserRequest() {}
-
+    
     /**
      * Constructs a new UpdateUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user to update. If you're changing the
      * name of the user, this is the original user name.
      */
     public UpdateUserRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
-
-
 
     /**
      * Name of the user to update. If you're changing the name of the user,
@@ -101,7 +99,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user to update. If you're changing the name of the user,
      * this is the original user name.
@@ -116,7 +114,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user to update. If you're changing the name of the user,
      * this is the original user name.
@@ -130,14 +128,13 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
      * @param userName Name of the user to update. If you're changing the name of the user,
      *         this is the original user name.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateUserRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * New path for the user. Include this parameter only if you're changing
@@ -153,7 +150,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     public String getNewPath() {
         return newPath;
     }
-
+    
     /**
      * New path for the user. Include this parameter only if you're changing
      * the user's path.
@@ -168,7 +165,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     public void setNewPath(String newPath) {
         this.newPath = newPath;
     }
-
+    
     /**
      * New path for the user. Include this parameter only if you're changing
      * the user's path.
@@ -182,14 +179,13 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
      * @param newPath New path for the user. Include this parameter only if you're changing
      *         the user's path.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateUserRequest withNewPath(String newPath) {
         this.newPath = newPath;
         return this;
     }
-
 
     /**
      * New name for the user. Include this parameter only if you're changing
@@ -205,7 +201,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     public String getNewUserName() {
         return newUserName;
     }
-
+    
     /**
      * New name for the user. Include this parameter only if you're changing
      * the user's name.
@@ -220,7 +216,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     public void setNewUserName(String newUserName) {
         this.newUserName = newUserName;
     }
-
+    
     /**
      * New name for the user. Include this parameter only if you're changing
      * the user's name.
@@ -234,7 +230,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
      * @param newUserName New name for the user. Include this parameter only if you're changing
      *         the user's name.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateUserRequest withNewUserName(String newUserName) {
@@ -242,21 +238,20 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");
         if (getNewUserName() != null) sb.append("NewUserName: " + getNewUserName() );
         sb.append("}");
         return sb.toString();

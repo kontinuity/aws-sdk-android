@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -23,7 +24,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the action ListAccessKeys.
  * </p>
  */
-public class AccessKeyMetadata  implements Serializable  {
+public class AccessKeyMetadata implements Serializable {
 
     /**
      * Name of the user the key is associated with.
@@ -101,14 +102,13 @@ public class AccessKeyMetadata  implements Serializable  {
      * @param userName Name of the user the key is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AccessKeyMetadata withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The ID for this access key.
      * <p>
@@ -147,14 +147,13 @@ public class AccessKeyMetadata  implements Serializable  {
      * @param accessKeyId The ID for this access key.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AccessKeyMetadata withAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
         return this;
     }
-    
-    
+
     /**
      * The status of the access key. <code>Active</code> means the key is
      * valid for API calls, while <code>Inactive</code> means it is not.
@@ -200,7 +199,7 @@ public class AccessKeyMetadata  implements Serializable  {
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      *
      * @see StatusType
      */
@@ -208,8 +207,7 @@ public class AccessKeyMetadata  implements Serializable  {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The status of the access key. <code>Active</code> means the key is
      * valid for API calls, while <code>Inactive</code> means it is not.
@@ -239,7 +237,7 @@ public class AccessKeyMetadata  implements Serializable  {
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      *
      * @see StatusType
      */
@@ -247,7 +245,7 @@ public class AccessKeyMetadata  implements Serializable  {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * The date when the access key was created.
      *
@@ -274,29 +272,28 @@ public class AccessKeyMetadata  implements Serializable  {
      * @param createDate The date when the access key was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AccessKeyMetadata withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
         sb.append("}");
         return sb.toString();

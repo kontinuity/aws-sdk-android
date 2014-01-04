@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(com.amazonaws.services.identitymanagement.model.DeleteLoginProfileRequest) DeleteLoginProfile operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest) DeleteLoginProfile operation}.
  * <p>
  * Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management Console.
  * </p>
@@ -29,9 +29,9 @@ import java.io.Serializable;
  * UpdateAccessKey and DeleteAccessKey.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(com.amazonaws.services.identitymanagement.model.DeleteLoginProfileRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest)
  */
-public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose password you want to delete.
@@ -47,19 +47,17 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public DeleteLoginProfileRequest() {}
-
+    
     /**
      * Constructs a new DeleteLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user whose password you want to delete.
      */
     public DeleteLoginProfileRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
-
-
 
     /**
      * Name of the user whose password you want to delete.
@@ -73,7 +71,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user whose password you want to delete.
      * <p>
@@ -86,7 +84,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user whose password you want to delete.
      * <p>
@@ -98,7 +96,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
      *
      * @param userName Name of the user whose password you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DeleteLoginProfileRequest withUserName(String userName) {
@@ -106,19 +104,18 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetGroup action.
  * </p>
  */
-public class GetGroupResult  implements Serializable  {
+public class GetGroupResult implements Serializable {
 
     /**
      * Information about the group.
@@ -30,7 +31,7 @@ public class GetGroupResult  implements Serializable  {
     /**
      * A list of users in the group.
      */
-    private java.util.List<User> users;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<User> users;
 
     /**
      * A flag that indicates whether there are more user names to list. If
@@ -77,23 +78,22 @@ public class GetGroupResult  implements Serializable  {
      * @param group Information about the group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetGroupResult withGroup(Group group) {
         this.group = group;
         return this;
     }
-    
-    
+
     /**
      * A list of users in the group.
      *
      * @return A list of users in the group.
      */
     public java.util.List<User> getUsers() {
-        
         if (users == null) {
-            users = new java.util.ArrayList<User>();
+              users = new com.amazonaws.internal.ListWithAutoConstructFlag<User>();
+              users.setAutoConstruct(true);
         }
         return users;
     }
@@ -108,8 +108,7 @@ public class GetGroupResult  implements Serializable  {
             this.users = null;
             return;
         }
-
-        java.util.List<User> usersCopy = new java.util.ArrayList<User>(users.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<User> usersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<User>(users.size());
         usersCopy.addAll(users);
         this.users = usersCopy;
     }
@@ -122,7 +121,7 @@ public class GetGroupResult  implements Serializable  {
      * @param users A list of users in the group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetGroupResult withUsers(User... users) {
         if (getUsers() == null) setUsers(new java.util.ArrayList<User>(users.length));
@@ -140,20 +139,20 @@ public class GetGroupResult  implements Serializable  {
      * @param users A list of users in the group.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetGroupResult withUsers(java.util.Collection<User> users) {
         if (users == null) {
             this.users = null;
         } else {
-            java.util.List<User> usersCopy = new java.util.ArrayList<User>(users.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<User> usersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<User>(users.size());
             usersCopy.addAll(users);
             this.users = usersCopy;
         }
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -198,14 +197,13 @@ public class GetGroupResult  implements Serializable  {
      *         more user names in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetGroupResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -220,7 +218,7 @@ public class GetGroupResult  implements Serializable  {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If IsTruncated is <code>true</code>, then this element is present and
      * contains the value to use for the <code>Marker</code> parameter in a
@@ -271,29 +269,28 @@ public class GetGroupResult  implements Serializable  {
      *         subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetGroupResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroup() != null) sb.append("Group: " + getGroup() + ",");    	
-        if (getUsers() != null) sb.append("Users: " + getUsers() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getGroup() != null) sb.append("Group: " + getGroup() + ",");
+        if (getUsers() != null) sb.append("Users: " + getUsers() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

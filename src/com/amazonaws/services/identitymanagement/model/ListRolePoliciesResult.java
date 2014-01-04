@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,12 +21,12 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListRolePolicies action.
  * </p>
  */
-public class ListRolePoliciesResult  implements Serializable  {
+public class ListRolePoliciesResult implements Serializable {
 
     /**
      * A list of policy names.
      */
-    private java.util.List<String> policyNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
      * A flag that indicates whether there are more policy names to list. If
@@ -52,9 +53,9 @@ public class ListRolePoliciesResult  implements Serializable  {
      * @return A list of policy names.
      */
     public java.util.List<String> getPolicyNames() {
-        
         if (policyNames == null) {
-            policyNames = new java.util.ArrayList<String>();
+              policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              policyNames.setAutoConstruct(true);
         }
         return policyNames;
     }
@@ -69,8 +70,7 @@ public class ListRolePoliciesResult  implements Serializable  {
             this.policyNames = null;
             return;
         }
-
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
         policyNamesCopy.addAll(policyNames);
         this.policyNames = policyNamesCopy;
     }
@@ -83,7 +83,7 @@ public class ListRolePoliciesResult  implements Serializable  {
      * @param policyNames A list of policy names.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListRolePoliciesResult withPolicyNames(String... policyNames) {
         if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
@@ -101,20 +101,20 @@ public class ListRolePoliciesResult  implements Serializable  {
      * @param policyNames A list of policy names.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListRolePoliciesResult withPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
         } else {
-            java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
             policyNamesCopy.addAll(policyNames);
             this.policyNames = policyNamesCopy;
         }
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more policy names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -159,14 +159,13 @@ public class ListRolePoliciesResult  implements Serializable  {
      *         more policy names in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListRolePoliciesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more policy names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -181,7 +180,7 @@ public class ListRolePoliciesResult  implements Serializable  {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -232,28 +231,27 @@ public class ListRolePoliciesResult  implements Serializable  {
      *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListRolePoliciesResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

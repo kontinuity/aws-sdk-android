@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
-import com.amazonaws.services.identitymanagement.model.ListInstanceProfilesRequest;
+import com.amazonaws.DefaultRequest;
+import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
@@ -29,8 +33,8 @@ public class ListInstanceProfilesRequestMarshaller implements Marshaller<Request
     public Request<ListInstanceProfilesRequest> marshall(ListInstanceProfilesRequest listInstanceProfilesRequest) {
 
         if (listInstanceProfilesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListInstanceProfilesRequest> request = new DefaultRequest<ListInstanceProfilesRequest>(listInstanceProfilesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListInstanceProfiles");
@@ -45,7 +49,6 @@ public class ListInstanceProfilesRequestMarshaller implements Marshaller<Request
         if (listInstanceProfilesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listInstanceProfilesRequest.getMaxItems()));
         }
-
 
         return request;
     }

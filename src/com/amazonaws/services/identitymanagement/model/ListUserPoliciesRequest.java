@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(com.amazonaws.services.identitymanagement.model.ListUserPoliciesRequest) ListUserPolicies operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(ListUserPoliciesRequest) ListUserPolicies operation}.
  * <p>
  * Lists the names of the policies associated with the specified user. If there are none, the action returns an empty list.
  * </p>
@@ -27,9 +27,9 @@ import java.io.Serializable;
  * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(com.amazonaws.services.identitymanagement.model.ListUserPoliciesRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(ListUserPoliciesRequest)
  */
-public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the user to list policies for.
@@ -56,7 +56,8 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -68,19 +69,17 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public ListUserPoliciesRequest() {}
-
+    
     /**
      * Constructs a new ListUserPoliciesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName The name of the user to list policies for.
      */
     public ListUserPoliciesRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
-
-
 
     /**
      * The name of the user to list policies for.
@@ -94,7 +93,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * The name of the user to list policies for.
      * <p>
@@ -107,7 +106,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * The name of the user to list policies for.
      * <p>
@@ -119,14 +118,13 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      *
      * @param userName The name of the user to list policies for.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListUserPoliciesRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * Use this only when paginating results, and only in a subsequent
@@ -146,7 +144,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
     public String getMarker() {
         return marker;
     }
-
+    
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -165,7 +163,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
+    
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -183,7 +181,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListUserPoliciesRequest withMarker(String marker) {
@@ -191,12 +189,12 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
         return this;
     }
 
-
     /**
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -204,17 +202,19 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      * @return Use this only when paginating results to indicate the maximum number
      *         of policy names you want in the response. If there are additional
      *         policy names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
     }
-
+    
     /**
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -222,17 +222,19 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of policy names you want in the response. If there are additional
      *         policy names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
-
+    
     /**
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -242,9 +244,10 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of policy names you want in the response. If there are additional
      *         policy names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListUserPoliciesRequest withMaxItems(Integer maxItems) {
@@ -252,21 +255,20 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(com.amazonaws.services.identitymanagement.model.GetServerCertificateRequest) GetServerCertificate operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(GetServerCertificateRequest) GetServerCertificate operation}.
  * <p>
  * Retrieves information about the specified server certificate.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(com.amazonaws.services.identitymanagement.model.GetServerCertificateRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(GetServerCertificateRequest)
  */
-public class GetServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the server certificate you want to retrieve information
@@ -43,20 +43,18 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public GetServerCertificateRequest() {}
-
+    
     /**
      * Constructs a new GetServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param serverCertificateName The name of the server certificate you
      * want to retrieve information about.
      */
     public GetServerCertificateRequest(String serverCertificateName) {
-        this.serverCertificateName = serverCertificateName;
+        setServerCertificateName(serverCertificateName);
     }
-
-
 
     /**
      * The name of the server certificate you want to retrieve information
@@ -72,7 +70,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
     public String getServerCertificateName() {
         return serverCertificateName;
     }
-
+    
     /**
      * The name of the server certificate you want to retrieve information
      * about.
@@ -87,7 +85,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
-
+    
     /**
      * The name of the server certificate you want to retrieve information
      * about.
@@ -101,7 +99,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
      * @param serverCertificateName The name of the server certificate you want to retrieve information
      *         about.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public GetServerCertificateRequest withServerCertificateName(String serverCertificateName) {
@@ -109,19 +107,18 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() );
         sb.append("}");
         return sb.toString();

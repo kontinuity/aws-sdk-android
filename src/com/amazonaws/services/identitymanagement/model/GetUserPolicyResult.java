@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetUserPolicy action.
  * </p>
  */
-public class GetUserPolicyResult  implements Serializable  {
+public class GetUserPolicyResult implements Serializable {
 
     /**
      * The user the policy is associated with.
@@ -87,14 +88,13 @@ public class GetUserPolicyResult  implements Serializable  {
      * @param userName The user the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetUserPolicyResult withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The name of the policy.
      * <p>
@@ -133,14 +133,13 @@ public class GetUserPolicyResult  implements Serializable  {
      * @param policyName The name of the policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetUserPolicyResult withPolicyName(String policyName) {
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The policy document.
      * <p>
@@ -179,28 +178,27 @@ public class GetUserPolicyResult  implements Serializable  {
      * @param policyDocument The policy document.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetUserPolicyResult withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
         if (getPolicyDocument() != null) sb.append("PolicyDocument: " + getPolicyDocument() );
         sb.append("}");
         return sb.toString();

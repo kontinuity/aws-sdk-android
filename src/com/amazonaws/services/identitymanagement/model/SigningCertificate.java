@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -23,7 +24,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the actions UploadSigningCertificate and ListSigningCertificates.
  * </p>
  */
-public class SigningCertificate  implements Serializable  {
+public class SigningCertificate implements Serializable {
 
     /**
      * Name of the user the signing certificate is associated with.
@@ -87,14 +88,12 @@ public class SigningCertificate  implements Serializable  {
      * <code>Inactive</code> means it is not.
      */
     public SigningCertificate(String userName, String certificateId, String certificateBody, String status) {
-        this.userName = userName;
-        this.certificateId = certificateId;
-        this.certificateBody = certificateBody;
-        this.status = status;
+        setUserName(userName);
+        setCertificateId(certificateId);
+        setCertificateBody(certificateBody);
+        setStatus(status);
     }
 
-    
-    
     /**
      * Constructs a new SigningCertificate object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -114,7 +113,7 @@ public class SigningCertificate  implements Serializable  {
         this.certificateBody = certificateBody;
         this.status = status.toString();
     }
-    
+
     /**
      * Name of the user the signing certificate is associated with.
      * <p>
@@ -153,14 +152,13 @@ public class SigningCertificate  implements Serializable  {
      * @param userName Name of the user the signing certificate is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SigningCertificate withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The ID for the signing certificate.
      * <p>
@@ -199,14 +197,13 @@ public class SigningCertificate  implements Serializable  {
      * @param certificateId The ID for the signing certificate.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SigningCertificate withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
     }
-    
-    
+
     /**
      * The contents of the signing certificate.
      * <p>
@@ -245,14 +242,13 @@ public class SigningCertificate  implements Serializable  {
      * @param certificateBody The contents of the signing certificate.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SigningCertificate withCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
         return this;
     }
-    
-    
+
     /**
      * The status of the signing certificate. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is
@@ -265,12 +261,12 @@ public class SigningCertificate  implements Serializable  {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @see com.amazonaws.services.identitymanagement.model.StatusType
+     * @see StatusType
      */
     public String getStatus() {
         return status;
     }
-
+    
     /**
      * The status of the signing certificate. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is
@@ -283,12 +279,12 @@ public class SigningCertificate  implements Serializable  {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @see com.amazonaws.services.identitymanagement.model.StatusType
+     * @see StatusType
      */
     public void setStatus(String status) {
         this.status = status;
     }
-
+    
     /**
      * The status of the signing certificate. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is
@@ -303,17 +299,16 @@ public class SigningCertificate  implements Serializable  {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      *
-     * @see com.amazonaws.services.identitymanagement.model.StatusType
+     * @see StatusType
      */
     public SigningCertificate withStatus(String status) {
         this.status = status;
         return this;
     }
 
-
     /**
      * The status of the signing certificate. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is
@@ -326,12 +321,12 @@ public class SigningCertificate  implements Serializable  {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @see com.amazonaws.services.identitymanagement.model.StatusType
+     * @see StatusType
      */
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
-
+    
     /**
      * The status of the signing certificate. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is
@@ -346,10 +341,10 @@ public class SigningCertificate  implements Serializable  {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      *
-     * @see com.amazonaws.services.identitymanagement.model.StatusType
+     * @see StatusType
      */
     public SigningCertificate withStatus(StatusType status) {
         this.status = status.toString();
@@ -364,7 +359,7 @@ public class SigningCertificate  implements Serializable  {
     public java.util.Date getUploadDate() {
         return uploadDate;
     }
-
+    
     /**
      * The date when the signing certificate was uploaded.
      *
@@ -373,7 +368,7 @@ public class SigningCertificate  implements Serializable  {
     public void setUploadDate(java.util.Date uploadDate) {
         this.uploadDate = uploadDate;
     }
-
+    
     /**
      * The date when the signing certificate was uploaded.
      * <p>
@@ -381,7 +376,7 @@ public class SigningCertificate  implements Serializable  {
      *
      * @param uploadDate The date when the signing certificate was uploaded.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public SigningCertificate withUploadDate(java.util.Date uploadDate) {
@@ -389,23 +384,22 @@ public class SigningCertificate  implements Serializable  {
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");    	
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() );
         sb.append("}");
         return sb.toString();

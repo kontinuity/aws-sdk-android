@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,20 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(com.amazonaws.services.identitymanagement.model.GetLoginProfileRequest) GetLoginProfile operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest) GetLoginProfile operation}.
  * <p>
- * Retrieves the user name and password create date for the specified user.
+ * Retrieves the user name and password-creation date for the specified user. If the user has not been assigned a password, the action returns a 404 (
+ * <code>NoSuchEntity</code> ) error.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(com.amazonaws.services.identitymanagement.model.GetLoginProfileRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest)
  */
-public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose login profile you want to retrieve.
@@ -42,20 +43,18 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public GetLoginProfileRequest() {}
-
+    
     /**
      * Constructs a new GetLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user whose login profile you want to
      * retrieve.
      */
     public GetLoginProfileRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
-
-
 
     /**
      * Name of the user whose login profile you want to retrieve.
@@ -69,7 +68,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user whose login profile you want to retrieve.
      * <p>
@@ -82,7 +81,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user whose login profile you want to retrieve.
      * <p>
@@ -94,7 +93,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
      *
      * @param userName Name of the user whose login profile you want to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public GetLoginProfileRequest withUserName(String userName) {
@@ -102,19 +101,18 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(com.amazonaws.services.identitymanagement.model.RemoveRoleFromInstanceProfileRequest) RemoveRoleFromInstanceProfile operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest) RemoveRoleFromInstanceProfile operation}.
  * <p>
  * Removes the specified role from the specified instance profile.
  * </p>
@@ -28,14 +28,14 @@ import java.io.Serializable;
  * a role from an instance profile that is associated with a running instance will break any applications running on the instance.
  * </p>
  * <p>
- * For more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles
- * </a> . For more information about instance profiles, go to <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> .
+ * For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For
+ * more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance
+ * Profiles </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(com.amazonaws.services.identitymanagement.model.RemoveRoleFromInstanceProfileRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest)
  */
-public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the instance profile to update.
@@ -67,7 +67,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     public String getInstanceProfileName() {
         return instanceProfileName;
     }
-
+    
     /**
      * Name of the instance profile to update.
      * <p>
@@ -80,7 +80,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
-
+    
     /**
      * Name of the instance profile to update.
      * <p>
@@ -92,14 +92,13 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      *
      * @param instanceProfileName Name of the instance profile to update.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public RemoveRoleFromInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
         return this;
     }
-
 
     /**
      * Name of the role to remove.
@@ -113,7 +112,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     public String getRoleName() {
         return roleName;
     }
-
+    
     /**
      * Name of the role to remove.
      * <p>
@@ -126,7 +125,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-
+    
     /**
      * Name of the role to remove.
      * <p>
@@ -138,7 +137,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      *
      * @param roleName Name of the role to remove.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public RemoveRoleFromInstanceProfileRequest withRoleName(String roleName) {
@@ -146,20 +145,19 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");    	
+        sb.append("{");
+        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
         if (getRoleName() != null) sb.append("RoleName: " + getRoleName() );
         sb.append("}");
         return sb.toString();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteInstanceProfile(com.amazonaws.services.identitymanagement.model.DeleteInstanceProfileRequest) DeleteInstanceProfile operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteInstanceProfile(DeleteInstanceProfileRequest) DeleteInstanceProfile operation}.
  * <p>
  * Deletes the specified instance profile. The instance profile must not have an associated role.
  * </p>
@@ -28,13 +28,13 @@ import java.io.Serializable;
  * instance profile that is associated with a running instance will break any applications running on the instance.
  * </p>
  * <p>
- * For more information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About
+ * For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About
  * Instance Profiles </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteInstanceProfile(com.amazonaws.services.identitymanagement.model.DeleteInstanceProfileRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteInstanceProfile(DeleteInstanceProfileRequest)
  */
-public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the instance profile to delete.
@@ -57,7 +57,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest  imple
     public String getInstanceProfileName() {
         return instanceProfileName;
     }
-
+    
     /**
      * Name of the instance profile to delete.
      * <p>
@@ -70,7 +70,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest  imple
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
-
+    
     /**
      * Name of the instance profile to delete.
      * <p>
@@ -82,7 +82,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest  imple
      *
      * @param instanceProfileName Name of the instance profile to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DeleteInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
@@ -90,19 +90,18 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest  imple
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() );
         sb.append("}");
         return sb.toString();

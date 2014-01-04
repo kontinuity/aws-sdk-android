@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(com.amazonaws.services.identitymanagement.model.UpdateServerCertificateRequest) UpdateServerCertificate operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(UpdateServerCertificateRequest) UpdateServerCertificate operation}.
  * <p>
  * Updates the name and/or the path of the specified server certificate.
  * </p>
@@ -33,9 +33,9 @@ import java.io.Serializable;
  * must have permission on all (*). For more information about permissions, see Permissions and Policies.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(com.amazonaws.services.identitymanagement.model.UpdateServerCertificateRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(UpdateServerCertificateRequest)
  */
-public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the server certificate that you want to update.
@@ -71,20 +71,18 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public UpdateServerCertificateRequest() {}
-
+    
     /**
      * Constructs a new UpdateServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param serverCertificateName The name of the server certificate that
      * you want to update.
      */
     public UpdateServerCertificateRequest(String serverCertificateName) {
-        this.serverCertificateName = serverCertificateName;
+        setServerCertificateName(serverCertificateName);
     }
-
-
 
     /**
      * The name of the server certificate that you want to update.
@@ -98,7 +96,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getServerCertificateName() {
         return serverCertificateName;
     }
-
+    
     /**
      * The name of the server certificate that you want to update.
      * <p>
@@ -111,7 +109,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
-
+    
     /**
      * The name of the server certificate that you want to update.
      * <p>
@@ -123,14 +121,13 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param serverCertificateName The name of the server certificate that you want to update.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateServerCertificateRequest withServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
         return this;
     }
-
 
     /**
      * The new path for the server certificate. Include this only if you are
@@ -146,7 +143,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getNewPath() {
         return newPath;
     }
-
+    
     /**
      * The new path for the server certificate. Include this only if you are
      * updating the server certificate's path.
@@ -161,7 +158,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setNewPath(String newPath) {
         this.newPath = newPath;
     }
-
+    
     /**
      * The new path for the server certificate. Include this only if you are
      * updating the server certificate's path.
@@ -175,14 +172,13 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      * @param newPath The new path for the server certificate. Include this only if you are
      *         updating the server certificate's path.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateServerCertificateRequest withNewPath(String newPath) {
         this.newPath = newPath;
         return this;
     }
-
 
     /**
      * The new name for the server certificate. Include this only if you are
@@ -198,7 +194,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getNewServerCertificateName() {
         return newServerCertificateName;
     }
-
+    
     /**
      * The new name for the server certificate. Include this only if you are
      * updating the server certificate's name.
@@ -213,7 +209,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setNewServerCertificateName(String newServerCertificateName) {
         this.newServerCertificateName = newServerCertificateName;
     }
-
+    
     /**
      * The new name for the server certificate. Include this only if you are
      * updating the server certificate's name.
@@ -227,7 +223,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      * @param newServerCertificateName The new name for the server certificate. Include this only if you are
      *         updating the server certificate's name.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateServerCertificateRequest withNewServerCertificateName(String newServerCertificateName) {
@@ -235,21 +231,20 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");    	
-        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");    	
+        sb.append("{");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");
         if (getNewServerCertificateName() != null) sb.append("NewServerCertificateName: " + getNewServerCertificateName() );
         sb.append("}");
         return sb.toString();

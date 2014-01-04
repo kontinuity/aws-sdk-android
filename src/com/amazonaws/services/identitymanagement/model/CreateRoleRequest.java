@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,18 +14,17 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(com.amazonaws.services.identitymanagement.model.CreateRoleRequest) CreateRole operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest) CreateRole operation}.
  * <p>
  * Creates a new role for your AWS account. For more information about roles, go to <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on
- * role names and the number of roles you can create, go to <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
- * Identity and Access Management</i> .
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role
+ * names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+ * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access Management</i> .
  * </p>
  * <p>
  * The policy grants permission to an EC2 instance to assume the role. The policy is URL-encoded according to RFC 3986. For more information about RFC
@@ -33,13 +32,13 @@ import java.io.Serializable;
  * roles.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(com.amazonaws.services.identitymanagement.model.CreateRoleRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest)
  */
-public class CreateRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateRoleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -70,7 +69,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
 
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -80,7 +79,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
      * @return The path to the role. For more information about paths, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -88,10 +87,10 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
     public String getPath() {
         return path;
     }
-
+    
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -101,7 +100,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
      * @param path The path to the role. For more information about paths, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -109,10 +108,10 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
     public void setPath(String path) {
         this.path = path;
     }
-
+    
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -124,19 +123,18 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
      * @param path The path to the role. For more information about paths, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CreateRoleRequest withPath(String path) {
         this.path = path;
         return this;
     }
-
 
     /**
      * Name of the role to create.
@@ -150,7 +148,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
     public String getRoleName() {
         return roleName;
     }
-
+    
     /**
      * Name of the role to create.
      * <p>
@@ -163,7 +161,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-
+    
     /**
      * Name of the role to create.
      * <p>
@@ -175,14 +173,13 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param roleName Name of the role to create.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CreateRoleRequest withRoleName(String roleName) {
         this.roleName = roleName;
         return this;
     }
-
 
     /**
      * The policy that grants an entity permission to assume the role.
@@ -196,7 +193,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
     public String getAssumeRolePolicyDocument() {
         return assumeRolePolicyDocument;
     }
-
+    
     /**
      * The policy that grants an entity permission to assume the role.
      * <p>
@@ -209,7 +206,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
     }
-
+    
     /**
      * The policy that grants an entity permission to assume the role.
      * <p>
@@ -221,7 +218,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CreateRoleRequest withAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
@@ -229,21 +226,20 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");
         if (getAssumeRolePolicyDocument() != null) sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument() );
         sb.append("}");
         return sb.toString();

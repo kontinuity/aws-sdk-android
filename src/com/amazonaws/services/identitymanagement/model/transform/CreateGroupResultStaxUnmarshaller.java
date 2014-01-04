@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,12 +15,16 @@
 
 package com.amazonaws.services.identitymanagement.model.transform;
 
-import com.amazonaws.services.identitymanagement.model.CreateGroupResult;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.Unmarshaller;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
+import com.amazonaws.services.identitymanagement.model.*;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.MapEntry;
+import com.amazonaws.transform.StaxUnmarshallerContext;
+import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Create Group Result StAX Unmarshaller
@@ -32,9 +36,7 @@ public class CreateGroupResultStaxUnmarshaller implements Unmarshaller<CreateGro
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

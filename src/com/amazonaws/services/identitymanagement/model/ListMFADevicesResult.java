@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,12 +21,12 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListMFADevices action.
  * </p>
  */
-public class ListMFADevicesResult  implements Serializable  {
+public class ListMFADevicesResult implements Serializable {
 
     /**
      * A list of MFA devices.
      */
-    private java.util.List<MFADevice> mFADevices;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice> mFADevices;
 
     /**
      * A flag that indicates whether there are more MFA devices to list. If
@@ -52,9 +53,9 @@ public class ListMFADevicesResult  implements Serializable  {
      * @return A list of MFA devices.
      */
     public java.util.List<MFADevice> getMFADevices() {
-        
         if (mFADevices == null) {
-            mFADevices = new java.util.ArrayList<MFADevice>();
+              mFADevices = new com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice>();
+              mFADevices.setAutoConstruct(true);
         }
         return mFADevices;
     }
@@ -69,8 +70,7 @@ public class ListMFADevicesResult  implements Serializable  {
             this.mFADevices = null;
             return;
         }
-
-        java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>(mFADevices.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice> mFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice>(mFADevices.size());
         mFADevicesCopy.addAll(mFADevices);
         this.mFADevices = mFADevicesCopy;
     }
@@ -83,7 +83,7 @@ public class ListMFADevicesResult  implements Serializable  {
      * @param mFADevices A list of MFA devices.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListMFADevicesResult withMFADevices(MFADevice... mFADevices) {
         if (getMFADevices() == null) setMFADevices(new java.util.ArrayList<MFADevice>(mFADevices.length));
@@ -101,20 +101,20 @@ public class ListMFADevicesResult  implements Serializable  {
      * @param mFADevices A list of MFA devices.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListMFADevicesResult withMFADevices(java.util.Collection<MFADevice> mFADevices) {
         if (mFADevices == null) {
             this.mFADevices = null;
         } else {
-            java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>(mFADevices.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice> mFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice>(mFADevices.size());
             mFADevicesCopy.addAll(mFADevices);
             this.mFADevices = mFADevicesCopy;
         }
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more MFA devices to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -159,14 +159,13 @@ public class ListMFADevicesResult  implements Serializable  {
      *         more MFA devices in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListMFADevicesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more MFA devices to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -181,7 +180,7 @@ public class ListMFADevicesResult  implements Serializable  {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -232,28 +231,27 @@ public class ListMFADevicesResult  implements Serializable  {
      *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListMFADevicesResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMFADevices() != null) sb.append("MFADevices: " + getMFADevices() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getMFADevices() != null) sb.append("MFADevices: " + getMFADevices() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,9 +21,9 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListVirtualMFADevices action.
  * </p>
  */
-public class ListVirtualMFADevicesResult  implements Serializable  {
+public class ListVirtualMFADevicesResult implements Serializable {
 
-    private java.util.List<VirtualMFADevice> virtualMFADevices;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevices;
 
     /**
      * A flag that indicates whether there are more items to list. If your
@@ -49,9 +50,9 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      * @return The value of the VirtualMFADevices property for this object.
      */
     public java.util.List<VirtualMFADevice> getVirtualMFADevices() {
-        
         if (virtualMFADevices == null) {
-            virtualMFADevices = new java.util.ArrayList<VirtualMFADevice>();
+              virtualMFADevices = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice>();
+              virtualMFADevices.setAutoConstruct(true);
         }
         return virtualMFADevices;
     }
@@ -66,8 +67,7 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
             this.virtualMFADevices = null;
             return;
         }
-
-        java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice>(virtualMFADevices.size());
         virtualMFADevicesCopy.addAll(virtualMFADevices);
         this.virtualMFADevices = virtualMFADevicesCopy;
     }
@@ -80,7 +80,7 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(VirtualMFADevice... virtualMFADevices) {
         if (getVirtualMFADevices() == null) setVirtualMFADevices(new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.length));
@@ -98,20 +98,20 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
         if (virtualMFADevices == null) {
             this.virtualMFADevices = null;
         } else {
-            java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice>(virtualMFADevices.size());
             virtualMFADevicesCopy.addAll(virtualMFADevices);
             this.virtualMFADevices = virtualMFADevicesCopy;
         }
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more items to list. If your
      * results were truncated, you can make a subsequent pagination request
@@ -156,14 +156,13 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      *         the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListVirtualMFADevicesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more items to list. If your
      * results were truncated, you can make a subsequent pagination request
@@ -178,7 +177,7 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -229,28 +228,27 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListVirtualMFADevicesResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVirtualMFADevices() != null) sb.append("VirtualMFADevices: " + getVirtualMFADevices() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getVirtualMFADevices() != null) sb.append("VirtualMFADevices: " + getVirtualMFADevices() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

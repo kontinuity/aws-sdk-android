@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(com.amazonaws.services.identitymanagement.model.UpdateAssumeRolePolicyRequest) UpdateAssumeRolePolicy operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest) UpdateAssumeRolePolicy operation}.
  * <p>
  * Updates the policy that grants an entity permission to assume a role. Currently, only an Amazon EC2 instance can assume a role. For more information
- * about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> .
+ * about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(com.amazonaws.services.identitymanagement.model.UpdateAssumeRolePolicyRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest)
  */
-public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the role to update.
@@ -59,7 +59,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
     public String getRoleName() {
         return roleName;
     }
-
+    
     /**
      * Name of the role to update.
      * <p>
@@ -72,7 +72,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-
+    
     /**
      * Name of the role to update.
      * <p>
@@ -84,14 +84,13 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
      *
      * @param roleName Name of the role to update.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAssumeRolePolicyRequest withRoleName(String roleName) {
         this.roleName = roleName;
         return this;
     }
-
 
     /**
      * The policy that grants an entity permission to assume the role.
@@ -105,7 +104,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
     public String getPolicyDocument() {
         return policyDocument;
     }
-
+    
     /**
      * The policy that grants an entity permission to assume the role.
      * <p>
@@ -118,7 +117,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
-
+    
     /**
      * The policy that grants an entity permission to assume the role.
      * <p>
@@ -130,7 +129,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
      *
      * @param policyDocument The policy that grants an entity permission to assume the role.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAssumeRolePolicyRequest withPolicyDocument(String policyDocument) {
@@ -138,20 +137,19 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");    	
+        sb.append("{");
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");
         if (getPolicyDocument() != null) sb.append("PolicyDocument: " + getPolicyDocument() );
         sb.append("}");
         return sb.toString();

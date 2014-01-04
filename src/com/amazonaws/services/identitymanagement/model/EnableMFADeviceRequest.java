@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(com.amazonaws.services.identitymanagement.model.EnableMFADeviceRequest) EnableMFADevice operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest) EnableMFADevice operation}.
  * <p>
  * Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every subsequent login
  * by the user name associated with the device.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(com.amazonaws.services.identitymanagement.model.EnableMFADeviceRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest)
  */
-public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user for whom you want to enable the MFA device.
@@ -71,12 +71,12 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public EnableMFADeviceRequest() {}
-
+    
     /**
      * Constructs a new EnableMFADeviceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user for whom you want to enable the MFA
      * device.
      * @param serialNumber The serial number that uniquely identifies the MFA
@@ -87,13 +87,11 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * the device.
      */
     public EnableMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
-        this.userName = userName;
-        this.serialNumber = serialNumber;
-        this.authenticationCode1 = authenticationCode1;
-        this.authenticationCode2 = authenticationCode2;
+        setUserName(userName);
+        setSerialNumber(serialNumber);
+        setAuthenticationCode1(authenticationCode1);
+        setAuthenticationCode2(authenticationCode2);
     }
-
-
 
     /**
      * Name of the user for whom you want to enable the MFA device.
@@ -107,7 +105,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user for whom you want to enable the MFA device.
      * <p>
@@ -120,7 +118,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user for whom you want to enable the MFA device.
      * <p>
@@ -132,14 +130,13 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param userName Name of the user for whom you want to enable the MFA device.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public EnableMFADeviceRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * The serial number that uniquely identifies the MFA device. For virtual
@@ -155,7 +152,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getSerialNumber() {
         return serialNumber;
     }
-
+    
     /**
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
@@ -170,7 +167,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
-
+    
     /**
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
@@ -184,14 +181,13 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public EnableMFADeviceRequest withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
     }
-
 
     /**
      * An authentication code emitted by the device.
@@ -205,7 +201,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getAuthenticationCode1() {
         return authenticationCode1;
     }
-
+    
     /**
      * An authentication code emitted by the device.
      * <p>
@@ -218,7 +214,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
     }
-
+    
     /**
      * An authentication code emitted by the device.
      * <p>
@@ -230,14 +226,13 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param authenticationCode1 An authentication code emitted by the device.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public EnableMFADeviceRequest withAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
         return this;
     }
-
 
     /**
      * A subsequent authentication code emitted by the device.
@@ -251,7 +246,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public String getAuthenticationCode2() {
         return authenticationCode2;
     }
-
+    
     /**
      * A subsequent authentication code emitted by the device.
      * <p>
@@ -264,7 +259,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
     public void setAuthenticationCode2(String authenticationCode2) {
         this.authenticationCode2 = authenticationCode2;
     }
-
+    
     /**
      * A subsequent authentication code emitted by the device.
      * <p>
@@ -276,7 +271,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param authenticationCode2 A subsequent authentication code emitted by the device.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public EnableMFADeviceRequest withAuthenticationCode2(String authenticationCode2) {
@@ -284,22 +279,21 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
-        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
+        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");
         if (getAuthenticationCode2() != null) sb.append("AuthenticationCode2: " + getAuthenticationCode2() );
         sb.append("}");
         return sb.toString();

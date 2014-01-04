@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteServerCertificate(com.amazonaws.services.identitymanagement.model.DeleteServerCertificateRequest) DeleteServerCertificate operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteServerCertificate(DeleteServerCertificateRequest) DeleteServerCertificate operation}.
  * <p>
  * Deletes the specified server certificate.
  * </p>
@@ -30,9 +30,9 @@ import java.io.Serializable;
  * using this command to delete the certificate. For more information, go to DeleteLoadBalancerListeners in the Elastic Load Balancing API Reference.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteServerCertificate(com.amazonaws.services.identitymanagement.model.DeleteServerCertificateRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteServerCertificate(DeleteServerCertificateRequest)
  */
-public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the server certificate you want to delete.
@@ -48,20 +48,18 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public DeleteServerCertificateRequest() {}
-
+    
     /**
      * Constructs a new DeleteServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param serverCertificateName The name of the server certificate you
      * want to delete.
      */
     public DeleteServerCertificateRequest(String serverCertificateName) {
-        this.serverCertificateName = serverCertificateName;
+        setServerCertificateName(serverCertificateName);
     }
-
-
 
     /**
      * The name of the server certificate you want to delete.
@@ -75,7 +73,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
     public String getServerCertificateName() {
         return serverCertificateName;
     }
-
+    
     /**
      * The name of the server certificate you want to delete.
      * <p>
@@ -88,7 +86,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
-
+    
     /**
      * The name of the server certificate you want to delete.
      * <p>
@@ -100,7 +98,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param serverCertificateName The name of the server certificate you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DeleteServerCertificateRequest withServerCertificateName(String serverCertificateName) {
@@ -108,19 +106,18 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() );
         sb.append("}");
         return sb.toString();

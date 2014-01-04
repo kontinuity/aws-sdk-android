@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(com.amazonaws.services.identitymanagement.model.UpdateLoginProfileRequest) UpdateLoginProfile operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(UpdateLoginProfileRequest) UpdateLoginProfile operation}.
  * <p>
  * Changes the password for the specified user.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(com.amazonaws.services.identitymanagement.model.UpdateLoginProfileRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(UpdateLoginProfileRequest)
  */
-public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose password you want to update.
@@ -51,19 +51,17 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public UpdateLoginProfileRequest() {}
-
+    
     /**
      * Constructs a new UpdateLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user whose password you want to update.
      */
     public UpdateLoginProfileRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
-
-
 
     /**
      * Name of the user whose password you want to update.
@@ -77,7 +75,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user whose password you want to update.
      * <p>
@@ -90,7 +88,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user whose password you want to update.
      * <p>
@@ -102,14 +100,13 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      *
      * @param userName Name of the user whose password you want to update.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateLoginProfileRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * The new password for the user name.
@@ -123,7 +120,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
     public String getPassword() {
         return password;
     }
-
+    
     /**
      * The new password for the user name.
      * <p>
@@ -136,7 +133,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
     public void setPassword(String password) {
         this.password = password;
     }
-
+    
     /**
      * The new password for the user name.
      * <p>
@@ -148,7 +145,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      *
      * @param password The new password for the user name.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateLoginProfileRequest withPassword(String password) {
@@ -156,20 +153,19 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getPassword() != null) sb.append("Password: " + getPassword() );
         sb.append("}");
         return sb.toString();

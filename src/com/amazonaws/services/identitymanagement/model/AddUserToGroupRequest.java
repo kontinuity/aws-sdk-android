@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addUserToGroup(com.amazonaws.services.identitymanagement.model.AddUserToGroupRequest) AddUserToGroup operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addUserToGroup(AddUserToGroupRequest) AddUserToGroup operation}.
  * <p>
  * Adds the specified user to the specified group.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addUserToGroup(com.amazonaws.services.identitymanagement.model.AddUserToGroupRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addUserToGroup(AddUserToGroupRequest)
  */
-public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AddUserToGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the group to update.
@@ -51,21 +51,19 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public AddUserToGroupRequest() {}
-
+    
     /**
      * Constructs a new AddUserToGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param groupName Name of the group to update.
      * @param userName Name of the user to add.
      */
     public AddUserToGroupRequest(String groupName, String userName) {
-        this.groupName = groupName;
-        this.userName = userName;
+        setGroupName(groupName);
+        setUserName(userName);
     }
-
-
 
     /**
      * Name of the group to update.
@@ -79,7 +77,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
     public String getGroupName() {
         return groupName;
     }
-
+    
     /**
      * Name of the group to update.
      * <p>
@@ -92,7 +90,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-
+    
     /**
      * Name of the group to update.
      * <p>
@@ -104,14 +102,13 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
      *
      * @param groupName Name of the group to update.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public AddUserToGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
-
 
     /**
      * Name of the user to add.
@@ -125,7 +122,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user to add.
      * <p>
@@ -138,7 +135,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user to add.
      * <p>
@@ -150,7 +147,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
      *
      * @param userName Name of the user to add.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public AddUserToGroupRequest withUserName(String userName) {
@@ -158,20 +155,19 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

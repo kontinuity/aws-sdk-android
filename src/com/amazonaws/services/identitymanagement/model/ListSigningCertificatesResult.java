@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,12 +21,12 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListSigningCertificates action.
  * </p>
  */
-public class ListSigningCertificatesResult  implements Serializable  {
+public class ListSigningCertificatesResult implements Serializable {
 
     /**
      * A list of the user's signing certificate information.
      */
-    private java.util.List<SigningCertificate> certificates;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SigningCertificate> certificates;
 
     /**
      * A flag that indicates whether there are more certificate IDs to list.
@@ -52,9 +53,9 @@ public class ListSigningCertificatesResult  implements Serializable  {
      * @return A list of the user's signing certificate information.
      */
     public java.util.List<SigningCertificate> getCertificates() {
-        
         if (certificates == null) {
-            certificates = new java.util.ArrayList<SigningCertificate>();
+              certificates = new com.amazonaws.internal.ListWithAutoConstructFlag<SigningCertificate>();
+              certificates.setAutoConstruct(true);
         }
         return certificates;
     }
@@ -69,8 +70,7 @@ public class ListSigningCertificatesResult  implements Serializable  {
             this.certificates = null;
             return;
         }
-
-        java.util.List<SigningCertificate> certificatesCopy = new java.util.ArrayList<SigningCertificate>(certificates.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SigningCertificate> certificatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SigningCertificate>(certificates.size());
         certificatesCopy.addAll(certificates);
         this.certificates = certificatesCopy;
     }
@@ -83,7 +83,7 @@ public class ListSigningCertificatesResult  implements Serializable  {
      * @param certificates A list of the user's signing certificate information.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSigningCertificatesResult withCertificates(SigningCertificate... certificates) {
         if (getCertificates() == null) setCertificates(new java.util.ArrayList<SigningCertificate>(certificates.length));
@@ -101,20 +101,20 @@ public class ListSigningCertificatesResult  implements Serializable  {
      * @param certificates A list of the user's signing certificate information.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSigningCertificatesResult withCertificates(java.util.Collection<SigningCertificate> certificates) {
         if (certificates == null) {
             this.certificates = null;
         } else {
-            java.util.List<SigningCertificate> certificatesCopy = new java.util.ArrayList<SigningCertificate>(certificates.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SigningCertificate> certificatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SigningCertificate>(certificates.size());
             certificatesCopy.addAll(certificates);
             this.certificates = certificatesCopy;
         }
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more certificate IDs to list.
      * If your results were truncated, you can make a subsequent pagination
@@ -159,14 +159,13 @@ public class ListSigningCertificatesResult  implements Serializable  {
      *         more certificates in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSigningCertificatesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more certificate IDs to list.
      * If your results were truncated, you can make a subsequent pagination
@@ -181,7 +180,7 @@ public class ListSigningCertificatesResult  implements Serializable  {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -232,28 +231,27 @@ public class ListSigningCertificatesResult  implements Serializable  {
      *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSigningCertificatesResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCertificates() != null) sb.append("Certificates: " + getCertificates() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getCertificates() != null) sb.append("Certificates: " + getCertificates() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

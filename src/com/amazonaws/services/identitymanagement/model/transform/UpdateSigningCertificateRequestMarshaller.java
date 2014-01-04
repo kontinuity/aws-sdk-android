@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
-import com.amazonaws.services.identitymanagement.model.UpdateSigningCertificateRequest;
+import com.amazonaws.DefaultRequest;
+import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
@@ -29,8 +33,8 @@ public class UpdateSigningCertificateRequestMarshaller implements Marshaller<Req
     public Request<UpdateSigningCertificateRequest> marshall(UpdateSigningCertificateRequest updateSigningCertificateRequest) {
 
         if (updateSigningCertificateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateSigningCertificateRequest> request = new DefaultRequest<UpdateSigningCertificateRequest>(updateSigningCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateSigningCertificate");
@@ -45,7 +49,6 @@ public class UpdateSigningCertificateRequestMarshaller implements Marshaller<Req
         if (updateSigningCertificateRequest.getStatus() != null) {
             request.addParameter("Status", StringUtils.fromString(updateSigningCertificateRequest.getStatus()));
         }
-
 
         return request;
     }

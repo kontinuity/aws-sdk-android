@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(com.amazonaws.services.identitymanagement.model.ListRolesRequest) ListRoles operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(ListRolesRequest) ListRoles operation}.
  * <p>
  * Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about roles, go to <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> .
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> .
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -32,9 +32,9 @@ import java.io.Serializable;
  * http://www.faqs.org/rfcs/rfc3986.html </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(com.amazonaws.services.identitymanagement.model.ListRolesRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(ListRolesRequest)
  */
-public class ListRolesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListRolesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path prefix for filtering the results. For example:
@@ -66,7 +66,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -95,7 +96,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
     public String getPathPrefix() {
         return pathPrefix;
     }
-
+    
     /**
      * The path prefix for filtering the results. For example:
      * <code>/application_abc/component_xyz/</code>, which would get all
@@ -118,7 +119,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
-
+    
     /**
      * The path prefix for filtering the results. For example:
      * <code>/application_abc/component_xyz/</code>, which would get all
@@ -140,14 +141,13 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all roles.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListRolesRequest withPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
         return this;
     }
-
 
     /**
      * Use this parameter only when paginating results, and only in a
@@ -167,7 +167,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
     public String getMarker() {
         return marker;
     }
-
+    
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -186,7 +186,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
+    
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -204,7 +204,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListRolesRequest withMarker(String marker) {
@@ -212,12 +212,12 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
         return this;
     }
 
-
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -225,17 +225,19 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
      * @return Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
     }
-
+    
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -243,17 +245,19 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
-
+    
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -263,9 +267,10 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListRolesRequest withMaxItems(Integer maxItems) {
@@ -273,21 +278,20 @@ public class ListRolesRequest extends AmazonWebServiceRequest  implements Serial
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPathPrefix() != null) sb.append("PathPrefix: " + getPathPrefix() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getPathPrefix() != null) sb.append("PathPrefix: " + getPathPrefix() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

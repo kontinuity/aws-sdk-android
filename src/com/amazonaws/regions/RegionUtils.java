@@ -149,7 +149,7 @@ public class RegionUtils {
         File regionsFile = new File(overrideFilePath);
         FileInputStream override = new FileInputStream(regionsFile);
         // Disable endpoint verification
-        initRegions(override, false);
+        initRegions(override);
     }
 
     /**
@@ -157,16 +157,12 @@ public class RegionUtils {
      * 
      * @param regionsFile
      *            The input stream pointing to the retrieved region file.
-     *            
-     * @param enableEndpointVerification
-     *            Whether to verify each endpoint when parsing the regions file.
-     *            (This should be disabled when regions file override is being
-     *            used.)
+     *
      */
     public static void initRegions(InputStream regionsFile) {
         try {
             RegionMetadataParser parser = new RegionMetadataParser();
-            regions = parser.parseRegionMetadata(regionsFile, enableEndpointVerification);
+            regions = parser.parseRegionMetadata(regionsFile);
         } catch ( Exception e ) {
             log.warn("Failed to parse regional endpoints", e);
         }
@@ -181,7 +177,7 @@ public class RegionUtils {
             log.debug("Initializing the regions from the region file bundled with the SDK...");
         }
         InputStream inputStream = RegionUtils.class.getResourceAsStream(FALLBACK);
-        initRegions(inputStream, true);
+        initRegions(inputStream);
     }
 
     /**

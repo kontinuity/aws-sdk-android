@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,23 +14,23 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(com.amazonaws.services.identitymanagement.model.CreateVirtualMFADeviceRequest) CreateVirtualMFADevice operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest) CreateVirtualMFADevice operation}.
  * <p>
  * Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a
- * href="http://docs.amazonwebservices.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM
- * user. For more information about creating and working with virtual MFA devices, go to <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html"> Using a Virtual MFA Device </a> in <i>Using AWS
- * Identity and Access Management</i> .
+ * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM user. For
+ * more information about creating and working with virtual MFA devices, go to <a
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html"> Using a Virtual MFA Device </a> in <i>Using AWS Identity and
+ * Access Management</i> .
  * </p>
  * <p>
  * For information about limits on the number of MFA devices you can create, see <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on Entities </a> in <i>Using AWS
- * Identity and Access Management</i> .
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on Entities </a> in <i>Using AWS Identity
+ * and Access Management</i> .
  * </p>
  * <p>
  * <b>IMPORTANT:</b>The seed information contained in the QR code and the Base32 string should be treated like any other secret access information, such
@@ -38,14 +38,14 @@ import java.io.Serializable;
  * secure procedures.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(com.amazonaws.services.identitymanagement.model.CreateVirtualMFADeviceRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest)
  */
-public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -69,7 +69,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -80,7 +80,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @return The path for the virtual MFA device. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -88,11 +88,11 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     public String getPath() {
         return path;
     }
-
+    
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -103,7 +103,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @param path The path for the virtual MFA device. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -111,11 +111,11 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     public void setPath(String path) {
         this.path = path;
     }
-
+    
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -128,19 +128,18 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @param path The path for the virtual MFA device. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CreateVirtualMFADeviceRequest withPath(String path) {
         this.path = path;
         return this;
     }
-
 
     /**
      * The name of the virtual MFA device. Use with path to uniquely identify
@@ -156,7 +155,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     public String getVirtualMFADeviceName() {
         return virtualMFADeviceName;
     }
-
+    
     /**
      * The name of the virtual MFA device. Use with path to uniquely identify
      * a virtual MFA device.
@@ -171,7 +170,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     public void setVirtualMFADeviceName(String virtualMFADeviceName) {
         this.virtualMFADeviceName = virtualMFADeviceName;
     }
-
+    
     /**
      * The name of the virtual MFA device. Use with path to uniquely identify
      * a virtual MFA device.
@@ -185,7 +184,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
      *         a virtual MFA device.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(String virtualMFADeviceName) {
@@ -193,20 +192,19 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
         if (getVirtualMFADeviceName() != null) sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName() );
         sb.append("}");
         return sb.toString();

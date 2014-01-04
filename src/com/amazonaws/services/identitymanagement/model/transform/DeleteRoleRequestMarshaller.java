@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
-import com.amazonaws.services.identitymanagement.model.DeleteRoleRequest;
+import com.amazonaws.DefaultRequest;
+import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
@@ -29,8 +33,8 @@ public class DeleteRoleRequestMarshaller implements Marshaller<Request<DeleteRol
     public Request<DeleteRoleRequest> marshall(DeleteRoleRequest deleteRoleRequest) {
 
         if (deleteRoleRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteRoleRequest> request = new DefaultRequest<DeleteRoleRequest>(deleteRoleRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteRole");
@@ -39,7 +43,6 @@ public class DeleteRoleRequestMarshaller implements Marshaller<Request<DeleteRol
         if (deleteRoleRequest.getRoleName() != null) {
             request.addParameter("RoleName", StringUtils.fromString(deleteRoleRequest.getRoleName()));
         }
-
 
         return request;
     }

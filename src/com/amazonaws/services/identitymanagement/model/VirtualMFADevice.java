@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ import java.io.Serializable;
  * The <code>VirtualMFADevice</code> data type contains information about a virtual MFA device.
  * </p>
  */
-public class VirtualMFADevice  implements Serializable  {
+public class VirtualMFADevice implements Serializable {
 
     /**
      * The serial number associated with <code>VirtualMFADevice</code>.
@@ -97,14 +98,13 @@ public class VirtualMFADevice  implements Serializable  {
      * @param serialNumber The serial number associated with <code>VirtualMFADevice</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public VirtualMFADevice withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
     }
-    
-    
+
     /**
      * The Base32 seed defined as specified in <a
      * href="http://www.ietf.org/rfc/rfc3548.txt"
@@ -149,14 +149,13 @@ public class VirtualMFADevice  implements Serializable  {
      *         Base64-encoded.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public VirtualMFADevice withBase32StringSeed(java.nio.ByteBuffer base32StringSeed) {
         this.base32StringSeed = base32StringSeed;
         return this;
     }
-    
-    
+
     /**
      * A QR code PNG image that encodes
      * <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
@@ -213,14 +212,13 @@ public class VirtualMFADevice  implements Serializable  {
      *         <code>Base32String</code> is Base64-encoded.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public VirtualMFADevice withQRCodePNG(java.nio.ByteBuffer qRCodePNG) {
         this.qRCodePNG = qRCodePNG;
         return this;
     }
-    
-    
+
     /**
      * The User data type contains information about a user. <p> This data
      * type is used as a response element in the following actions: <ul>
@@ -265,14 +263,13 @@ public class VirtualMFADevice  implements Serializable  {
      *         <li><p><a>ListUsers</a></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public VirtualMFADevice withUser(User user) {
         this.user = user;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EnableDate property for this object.
      *
@@ -299,30 +296,29 @@ public class VirtualMFADevice  implements Serializable  {
      * @param enableDate The new value for the EnableDate property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public VirtualMFADevice withEnableDate(java.util.Date enableDate) {
         this.enableDate = enableDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
-        if (getBase32StringSeed() != null) sb.append("Base32StringSeed: " + getBase32StringSeed() + ",");    	
-        if (getQRCodePNG() != null) sb.append("QRCodePNG: " + getQRCodePNG() + ",");    	
-        if (getUser() != null) sb.append("User: " + getUser() + ",");    	
+        sb.append("{");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
+        if (getBase32StringSeed() != null) sb.append("Base32StringSeed: " + getBase32StringSeed() + ",");
+        if (getQRCodePNG() != null) sb.append("QRCodePNG: " + getQRCodePNG() + ",");
+        if (getUser() != null) sb.append("User: " + getUser() + ",");
         if (getEnableDate() != null) sb.append("EnableDate: " + getEnableDate() );
         sb.append("}");
         return sb.toString();

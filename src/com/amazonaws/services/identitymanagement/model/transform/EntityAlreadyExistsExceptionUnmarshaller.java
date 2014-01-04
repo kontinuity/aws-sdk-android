@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,13 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.services.identitymanagement.model.EntityAlreadyExistsException;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
 import org.w3c.dom.Node;
+
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.util.XpathUtils;
+import com.amazonaws.transform.StandardErrorUnmarshaller;
+
+import com.amazonaws.services.identitymanagement.model.EntityAlreadyExistsException;
 
 public class EntityAlreadyExistsExceptionUnmarshaller extends StandardErrorUnmarshaller {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -23,7 +24,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the action GetServerCertificate.
  * </p>
  */
-public class ServerCertificate  implements Serializable  {
+public class ServerCertificate implements Serializable {
 
     /**
      * The meta information of the server certificate, such as its name,
@@ -65,12 +66,10 @@ public class ServerCertificate  implements Serializable  {
      * @param certificateBody The contents of the public key certificate.
      */
     public ServerCertificate(ServerCertificateMetadata serverCertificateMetadata, String certificateBody) {
-        this.serverCertificateMetadata = serverCertificateMetadata;
-        this.certificateBody = certificateBody;
+        setServerCertificateMetadata(serverCertificateMetadata);
+        setCertificateBody(certificateBody);
     }
 
-    
-    
     /**
      * The meta information of the server certificate, such as its name,
      * path, ID, and ARN.
@@ -103,14 +102,13 @@ public class ServerCertificate  implements Serializable  {
      *         path, ID, and ARN.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ServerCertificate withServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata) {
         this.serverCertificateMetadata = serverCertificateMetadata;
         return this;
     }
-    
-    
+
     /**
      * The contents of the public key certificate.
      * <p>
@@ -149,14 +147,13 @@ public class ServerCertificate  implements Serializable  {
      * @param certificateBody The contents of the public key certificate.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ServerCertificate withCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
         return this;
     }
-    
-    
+
     /**
      * The contents of the public key certificate chain.
      * <p>
@@ -195,28 +192,27 @@ public class ServerCertificate  implements Serializable  {
      * @param certificateChain The contents of the public key certificate chain.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ServerCertificate withCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ",");    	
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
+        sb.append("{");
+        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ",");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");
         if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() );
         sb.append("}");
         return sb.toString();

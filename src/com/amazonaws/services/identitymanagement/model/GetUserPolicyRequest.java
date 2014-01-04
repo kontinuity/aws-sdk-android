@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(com.amazonaws.services.identitymanagement.model.GetUserPolicyRequest) GetUserPolicy operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(GetUserPolicyRequest) GetUserPolicy operation}.
  * <p>
  * Retrieves the specified policy document for the specified user. The returned policy is URL-encoded according to RFC 3986. For more information about
  * RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(com.amazonaws.services.identitymanagement.model.GetUserPolicyRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(GetUserPolicyRequest)
  */
-public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user who the policy is associated with.
@@ -52,21 +52,19 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public GetUserPolicyRequest() {}
-
+    
     /**
      * Constructs a new GetUserPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     *
+     * 
      * @param userName Name of the user who the policy is associated with.
      * @param policyName Name of the policy document to get.
      */
     public GetUserPolicyRequest(String userName, String policyName) {
-        this.userName = userName;
-        this.policyName = policyName;
+        setUserName(userName);
+        setPolicyName(policyName);
     }
-
-
 
     /**
      * Name of the user who the policy is associated with.
@@ -80,7 +78,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
     public String getUserName() {
         return userName;
     }
-
+    
     /**
      * Name of the user who the policy is associated with.
      * <p>
@@ -93,7 +91,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    
     /**
      * Name of the user who the policy is associated with.
      * <p>
@@ -105,14 +103,13 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param userName Name of the user who the policy is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public GetUserPolicyRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
 
     /**
      * Name of the policy document to get.
@@ -126,7 +123,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
     public String getPolicyName() {
         return policyName;
     }
-
+    
     /**
      * Name of the policy document to get.
      * <p>
@@ -139,7 +136,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
-
+    
     /**
      * Name of the policy document to get.
      * <p>
@@ -151,7 +148,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param policyName Name of the policy document to get.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public GetUserPolicyRequest withPolicyName(String policyName) {
@@ -159,20 +156,19 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

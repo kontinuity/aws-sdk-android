@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,12 +21,12 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListInstanceProfilesForRole action.
  * </p>
  */
-public class ListInstanceProfilesForRoleResult  implements Serializable  {
+public class ListInstanceProfilesForRoleResult implements Serializable {
 
     /**
      * A list of instance profiles.
      */
-    private java.util.List<InstanceProfile> instanceProfiles;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile> instanceProfiles;
 
     /**
      * A flag that indicates whether there are more instance profiles to
@@ -52,9 +53,9 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      * @return A list of instance profiles.
      */
     public java.util.List<InstanceProfile> getInstanceProfiles() {
-        
         if (instanceProfiles == null) {
-            instanceProfiles = new java.util.ArrayList<InstanceProfile>();
+              instanceProfiles = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile>();
+              instanceProfiles.setAutoConstruct(true);
         }
         return instanceProfiles;
     }
@@ -69,8 +70,7 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
             this.instanceProfiles = null;
             return;
         }
-
-        java.util.List<InstanceProfile> instanceProfilesCopy = new java.util.ArrayList<InstanceProfile>(instanceProfiles.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile> instanceProfilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile>(instanceProfiles.size());
         instanceProfilesCopy.addAll(instanceProfiles);
         this.instanceProfiles = instanceProfilesCopy;
     }
@@ -83,7 +83,7 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      * @param instanceProfiles A list of instance profiles.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withInstanceProfiles(InstanceProfile... instanceProfiles) {
         if (getInstanceProfiles() == null) setInstanceProfiles(new java.util.ArrayList<InstanceProfile>(instanceProfiles.length));
@@ -101,20 +101,20 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      * @param instanceProfiles A list of instance profiles.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withInstanceProfiles(java.util.Collection<InstanceProfile> instanceProfiles) {
         if (instanceProfiles == null) {
             this.instanceProfiles = null;
         } else {
-            java.util.List<InstanceProfile> instanceProfilesCopy = new java.util.ArrayList<InstanceProfile>(instanceProfiles.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile> instanceProfilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile>(instanceProfiles.size());
             instanceProfilesCopy.addAll(instanceProfiles);
             this.instanceProfiles = instanceProfilesCopy;
         }
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more instance profiles to
      * list. If your results were truncated, you can make a subsequent
@@ -159,14 +159,13 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      *         retrieve more instance profiles in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more instance profiles to
      * list. If your results were truncated, you can make a subsequent
@@ -181,7 +180,7 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -232,28 +231,27 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceProfiles() != null) sb.append("InstanceProfiles: " + getInstanceProfiles() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getInstanceProfiles() != null) sb.append("InstanceProfiles: " + getInstanceProfiles() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

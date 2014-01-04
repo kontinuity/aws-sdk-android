@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,12 +21,12 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListUsers action.
  * </p>
  */
-public class ListUsersResult  implements Serializable  {
+public class ListUsersResult implements Serializable {
 
     /**
      * A list of users.
      */
-    private java.util.List<User> users;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<User> users;
 
     /**
      * A flag that indicates whether there are more user names to list. If
@@ -52,9 +53,9 @@ public class ListUsersResult  implements Serializable  {
      * @return A list of users.
      */
     public java.util.List<User> getUsers() {
-        
         if (users == null) {
-            users = new java.util.ArrayList<User>();
+              users = new com.amazonaws.internal.ListWithAutoConstructFlag<User>();
+              users.setAutoConstruct(true);
         }
         return users;
     }
@@ -69,8 +70,7 @@ public class ListUsersResult  implements Serializable  {
             this.users = null;
             return;
         }
-
-        java.util.List<User> usersCopy = new java.util.ArrayList<User>(users.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<User> usersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<User>(users.size());
         usersCopy.addAll(users);
         this.users = usersCopy;
     }
@@ -83,7 +83,7 @@ public class ListUsersResult  implements Serializable  {
      * @param users A list of users.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListUsersResult withUsers(User... users) {
         if (getUsers() == null) setUsers(new java.util.ArrayList<User>(users.length));
@@ -101,20 +101,20 @@ public class ListUsersResult  implements Serializable  {
      * @param users A list of users.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListUsersResult withUsers(java.util.Collection<User> users) {
         if (users == null) {
             this.users = null;
         } else {
-            java.util.List<User> usersCopy = new java.util.ArrayList<User>(users.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<User> usersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<User>(users.size());
             usersCopy.addAll(users);
             this.users = usersCopy;
         }
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -159,14 +159,13 @@ public class ListUsersResult  implements Serializable  {
      *         more users in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListUsersResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -181,7 +180,7 @@ public class ListUsersResult  implements Serializable  {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -232,28 +231,27 @@ public class ListUsersResult  implements Serializable  {
      *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListUsersResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUsers() != null) sb.append("Users: " + getUsers() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getUsers() != null) sb.append("Users: " + getUsers() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

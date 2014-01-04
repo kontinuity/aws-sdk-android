@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(com.amazonaws.services.identitymanagement.model.UpdateAccountPasswordPolicyRequest) UpdateAccountPasswordPolicy operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest) UpdateAccountPasswordPolicy operation}.
  * <p>
  * Updates the password policy settings for the account. For more information about using a password policy, go to <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a> .
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(com.amazonaws.services.identitymanagement.model.UpdateAccountPasswordPolicyRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest)
  */
-public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     private Integer minimumPasswordLength;
 
@@ -53,7 +53,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Integer getMinimumPasswordLength() {
         return minimumPasswordLength;
     }
-
+    
     /**
      * Sets the value of the MinimumPasswordLength property for this object.
      * <p>
@@ -65,7 +65,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public void setMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
     }
-
+    
     /**
      * Sets the value of the MinimumPasswordLength property for this object.
      * <p>
@@ -76,14 +76,13 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @param minimumPasswordLength The new value for the MinimumPasswordLength property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
         return this;
     }
-
 
     /**
      * Returns the value of the RequireSymbols property for this object.
@@ -93,7 +92,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean isRequireSymbols() {
         return requireSymbols;
     }
-
+    
     /**
      * Sets the value of the RequireSymbols property for this object.
      *
@@ -102,7 +101,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public void setRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
     }
-
+    
     /**
      * Sets the value of the RequireSymbols property for this object.
      * <p>
@@ -110,14 +109,13 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @param requireSymbols The new value for the RequireSymbols property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
         return this;
     }
-
 
     /**
      * Returns the value of the RequireSymbols property for this object.
@@ -136,7 +134,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean isRequireNumbers() {
         return requireNumbers;
     }
-
+    
     /**
      * Sets the value of the RequireNumbers property for this object.
      *
@@ -145,7 +143,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public void setRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
     }
-
+    
     /**
      * Sets the value of the RequireNumbers property for this object.
      * <p>
@@ -153,14 +151,13 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @param requireNumbers The new value for the RequireNumbers property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
         return this;
     }
-
 
     /**
      * Returns the value of the RequireNumbers property for this object.
@@ -180,7 +177,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean isRequireUppercaseCharacters() {
         return requireUppercaseCharacters;
     }
-
+    
     /**
      * Sets the value of the RequireUppercaseCharacters property for this
      * object.
@@ -191,7 +188,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
     }
-
+    
     /**
      * Sets the value of the RequireUppercaseCharacters property for this
      * object.
@@ -201,14 +198,13 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * @param requireUppercaseCharacters The new value for the RequireUppercaseCharacters property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
         return this;
     }
-
 
     /**
      * Returns the value of the RequireUppercaseCharacters property for this
@@ -229,7 +225,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean isRequireLowercaseCharacters() {
         return requireLowercaseCharacters;
     }
-
+    
     /**
      * Sets the value of the RequireLowercaseCharacters property for this
      * object.
@@ -240,7 +236,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
     }
-
+    
     /**
      * Sets the value of the RequireLowercaseCharacters property for this
      * object.
@@ -250,14 +246,13 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * @param requireLowercaseCharacters The new value for the RequireLowercaseCharacters property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
         return this;
     }
-
 
     /**
      * Returns the value of the RequireLowercaseCharacters property for this
@@ -278,7 +273,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean isAllowUsersToChangePassword() {
         return allowUsersToChangePassword;
     }
-
+    
     /**
      * Sets the value of the AllowUsersToChangePassword property for this
      * object.
@@ -289,7 +284,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
     }
-
+    
     /**
      * Sets the value of the AllowUsersToChangePassword property for this
      * object.
@@ -299,14 +294,13 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
         return this;
     }
-
 
     /**
      * Returns the value of the AllowUsersToChangePassword property for this
@@ -324,17 +318,17 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMinimumPasswordLength() != null) sb.append("MinimumPasswordLength: " + getMinimumPasswordLength() + ",");    	
-        if (isRequireSymbols() != null) sb.append("RequireSymbols: " + isRequireSymbols() + ",");    	
-        if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ",");    	
-        if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ",");    	
-        if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ",");    	
+        sb.append("{");
+        if (getMinimumPasswordLength() != null) sb.append("MinimumPasswordLength: " + getMinimumPasswordLength() + ",");
+        if (isRequireSymbols() != null) sb.append("RequireSymbols: " + isRequireSymbols() + ",");
+        if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ",");
+        if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ",");
+        if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ",");
         if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() );
         sb.append("}");
         return sb.toString();

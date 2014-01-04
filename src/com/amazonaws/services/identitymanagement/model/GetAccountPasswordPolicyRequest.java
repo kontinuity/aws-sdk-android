@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountPasswordPolicy(com.amazonaws.services.identitymanagement.model.GetAccountPasswordPolicyRequest) GetAccountPasswordPolicy operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountPasswordPolicy(GetAccountPasswordPolicyRequest) GetAccountPasswordPolicy operation}.
  * <p>
  * Retrieves the password policy for the AWS account. For more information about using a password policy, go to <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a> .
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a> .
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountPasswordPolicy(com.amazonaws.services.identitymanagement.model.GetAccountPasswordPolicyRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountPasswordPolicy(GetAccountPasswordPolicyRequest)
  */
-public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -35,7 +35,7 @@ public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest  im
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {

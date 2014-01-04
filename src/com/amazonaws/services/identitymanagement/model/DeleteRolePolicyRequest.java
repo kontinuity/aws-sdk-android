@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(com.amazonaws.services.identitymanagement.model.DeleteRolePolicyRequest) DeleteRolePolicy operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(DeleteRolePolicyRequest) DeleteRolePolicy operation}.
  * <p>
  * Deletes the specified policy associated with the specified role.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(com.amazonaws.services.identitymanagement.model.DeleteRolePolicyRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(DeleteRolePolicyRequest)
  */
-public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the role the associated with the policy.
@@ -58,7 +58,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
     public String getRoleName() {
         return roleName;
     }
-
+    
     /**
      * Name of the role the associated with the policy.
      * <p>
@@ -71,7 +71,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-
+    
     /**
      * Name of the role the associated with the policy.
      * <p>
@@ -83,14 +83,13 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
      *
      * @param roleName Name of the role the associated with the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DeleteRolePolicyRequest withRoleName(String roleName) {
         this.roleName = roleName;
         return this;
     }
-
 
     /**
      * Name of the policy document to delete.
@@ -104,7 +103,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
     public String getPolicyName() {
         return policyName;
     }
-
+    
     /**
      * Name of the policy document to delete.
      * <p>
@@ -117,7 +116,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
-
+    
     /**
      * Name of the policy document to delete.
      * <p>
@@ -129,7 +128,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
      *
      * @param policyName Name of the policy document to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DeleteRolePolicyRequest withPolicyName(String policyName) {
@@ -137,20 +136,19 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");    	
+        sb.append("{");
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

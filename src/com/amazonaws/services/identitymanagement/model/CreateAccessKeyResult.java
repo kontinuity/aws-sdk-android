@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the CreateAccessKey action.
  * </p>
  */
-public class CreateAccessKeyResult  implements Serializable  {
+public class CreateAccessKeyResult implements Serializable {
 
     /**
      * Information about the access key.
@@ -53,26 +54,25 @@ public class CreateAccessKeyResult  implements Serializable  {
      * @param accessKey Information about the access key.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public CreateAccessKeyResult withAccessKey(AccessKey accessKey) {
         this.accessKey = accessKey;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAccessKey() != null) sb.append("AccessKey: " + getAccessKey() );
         sb.append("}");
         return sb.toString();

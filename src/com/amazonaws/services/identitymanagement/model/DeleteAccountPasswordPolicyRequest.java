@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(com.amazonaws.services.identitymanagement.model.DeleteAccountPasswordPolicyRequest) DeleteAccountPasswordPolicy operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest) DeleteAccountPasswordPolicy operation}.
  * <p>
  * Deletes the password policy for the AWS account.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(com.amazonaws.services.identitymanagement.model.DeleteAccountPasswordPolicyRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest)
  */
-public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -34,7 +34,7 @@ public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {

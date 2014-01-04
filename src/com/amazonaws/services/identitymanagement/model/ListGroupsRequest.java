@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 import java.io.Serializable;
 
+import com.amazonaws.AmazonWebServiceRequest;
+
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(com.amazonaws.services.identitymanagement.model.ListGroupsRequest) ListGroups operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(ListGroupsRequest) ListGroups operation}.
  * <p>
  * Lists the groups that have the specified path prefix.
  * </p>
@@ -27,9 +27,9 @@ import java.io.Serializable;
  * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(com.amazonaws.services.identitymanagement.model.ListGroupsRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(ListGroupsRequest)
  */
-public class ListGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path prefix for filtering the results. For example:
@@ -61,7 +61,8 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
      * Use this only when paginating results to indicate the maximum number
      * of groups you want in the response. If there are additional groups
      * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * element is <code>true</code>. This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -73,7 +74,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public ListGroupsRequest() {}
-
+    
     /**
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all
@@ -96,7 +97,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
     public String getPathPrefix() {
         return pathPrefix;
     }
-
+    
     /**
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all
@@ -119,7 +120,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
-
+    
     /**
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all
@@ -141,14 +142,13 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all groups.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListGroupsRequest withPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
         return this;
     }
-
 
     /**
      * Use this only when paginating results, and only in a subsequent
@@ -168,7 +168,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
     public String getMarker() {
         return marker;
     }
-
+    
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -187,7 +187,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
+    
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -205,7 +205,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListGroupsRequest withMarker(String marker) {
@@ -213,12 +213,12 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
         return this;
     }
 
-
     /**
      * Use this only when paginating results to indicate the maximum number
      * of groups you want in the response. If there are additional groups
      * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * element is <code>true</code>. This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -226,17 +226,19 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
      * @return Use this only when paginating results to indicate the maximum number
      *         of groups you want in the response. If there are additional groups
      *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     *         element is <code>true</code>. This parameter is optional. If you do
+     *         not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
     }
-
+    
     /**
      * Use this only when paginating results to indicate the maximum number
      * of groups you want in the response. If there are additional groups
      * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * element is <code>true</code>. This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -244,17 +246,19 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of groups you want in the response. If there are additional groups
      *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     *         element is <code>true</code>. This parameter is optional. If you do
+     *         not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
-
+    
     /**
      * Use this only when paginating results to indicate the maximum number
      * of groups you want in the response. If there are additional groups
      * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * element is <code>true</code>. This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -264,9 +268,10 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of groups you want in the response. If there are additional groups
      *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     *         element is <code>true</code>. This parameter is optional. If you do
+     *         not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained
+     * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public ListGroupsRequest withMaxItems(Integer maxItems) {
@@ -274,21 +279,20 @@ public class ListGroupsRequest extends AmazonWebServiceRequest  implements Seria
         return this;
     }
 
-
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
      * @return A string representation of this object.
      *
-     * @see Object#toString()
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPathPrefix() != null) sb.append("PathPrefix: " + getPathPrefix() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getPathPrefix() != null) sb.append("PathPrefix: " + getPathPrefix() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();
