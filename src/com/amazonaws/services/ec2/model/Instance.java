@@ -36,6 +36,9 @@ public class Instance  implements Serializable  {
     @DatabaseField(id = true)
     private String instanceId;
 
+    @DatabaseField(canBeNull = false)
+    private String regionCode;
+
     /**
      * Image ID of the AMI used to launch the instance.
      */
@@ -2331,6 +2334,14 @@ public class Instance  implements Serializable  {
 
     public void setHourlyAverageCPUUtilization(List<Datapoint> hourlyAverageCPUUtilization) {
         this.hourlyAverageCPUUtilization = hourlyAverageCPUUtilization;
+    }
+
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 }
     
