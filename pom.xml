@@ -125,6 +125,7 @@
   </developers>
 
   <build>
+    <finalName>aws-android-sdk-awsmc-${project.version}</finalName>
     <sourceDirectory>src</sourceDirectory>
     <pluginManagement>
       <plugins>
