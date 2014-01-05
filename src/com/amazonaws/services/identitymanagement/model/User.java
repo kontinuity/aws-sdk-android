@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import com.j256.ormlite.field.DatabaseField;
 
 import java.io.Serializable;
 
@@ -52,6 +53,7 @@ public class User implements Serializable {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      */
+    @DatabaseField
     private String path;
 
     /**
@@ -61,6 +63,7 @@ public class User implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
+    @DatabaseField
     private String userName;
 
     /**
@@ -74,6 +77,7 @@ public class User implements Serializable {
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      */
+    @DatabaseField
     private String userId;
 
     /**
@@ -86,11 +90,13 @@ public class User implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      */
+    @DatabaseField
     private String arn;
 
     /**
      * The date when the user was created.
      */
+    @DatabaseField
     private java.util.Date createDate;
 
     /**
