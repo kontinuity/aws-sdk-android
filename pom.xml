@@ -79,6 +79,7 @@
       <version>2.1.1</version>
       <type>jar</type>
       <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
