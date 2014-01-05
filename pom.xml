@@ -36,6 +36,20 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.j256.ormlite</groupId>
+      <artifactId>ormlite-core-awsmc</artifactId>
+      <version>4.48</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/../ormlite-core/target/ormlite-core-awsmc-4.48-SNAPSHOT.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.j256.ormlite</groupId>
+      <artifactId>ormlite-android-awsmc</artifactId>
+      <version>4.48</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/../ormlite-android/target/ormlite-android-awsmc-4.48-SNAPSHOT.jar</systemPath>
+    </dependency>
+    <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
       <version>[4.2, 4.2.5)</version>
