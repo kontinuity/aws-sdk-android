@@ -15,10 +15,11 @@
 package com.amazonaws.http;
 
 import com.amazonaws.ClientConfiguration;
+import com.squareup.okhttp.apache.OkApacheClient;
 import org.apache.http.client.HttpClient;
 
 /** Responsible for creating and configuring instances of Apache HttpClient4. */
-interface HttpClientFactory {
+class OkHttpClientFactory implements HttpClientFactory {
 
 
     /**
@@ -31,5 +32,8 @@ interface HttpClientFactory {
      *
      * @return The new, configured HttpClient.
      */
-    public HttpClient createHttpClient(ClientConfiguration config);
+    @Override
+    public HttpClient createHttpClient(ClientConfiguration config) {
+        return new OkApacheClient();
+    }
 }

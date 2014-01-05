@@ -52,8 +52,13 @@
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>[4.2, 4.2.5)</version>
+      <version>4.3.1</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.squareup.okhttp</groupId>
+      <artifactId>okhttp-apache</artifactId>
+      <version>1.2.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
@@ -128,6 +133,23 @@
   <build>
     <finalName>aws-android-sdk-awsmc-${project.version}</finalName>
     <sourceDirectory>src</sourceDirectory>
+
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <filtering>false</filtering>
+        <includes>
+          <include>*.json</include>
+          <include>*.types</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/com/amazonaws/sdk</directory>
+        <filtering>false</filtering>
+        <targetPath>com/amazonaws/sdk</targetPath>
+      </resource>
+    </resources>
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -165,10 +187,10 @@
                 <include>com.fasterxml.jackson.core:jackson-databind</include>
               </includes>
               <rules>
-                <rule>
-                  <pattern>org.apache.http.**</pattern>
-                  <result>com.amazonaws.org.apache.http.@1</result>
-                </rule>
+                <!--<rule>-->
+                  <!--<pattern>org.apache.http.**</pattern>-->
+                  <!--<result>com.amazonaws.org.apache.http.@1</result>-->
+                <!--</rule>-->
                 <rule>
                   <pattern>javax.xml.namespace.**</pattern>
                   <result>com.amazonaws.javax.xml.namespace.@1</result>
@@ -197,6 +219,28 @@
                   <pattern>com.sun.xml.internal.stream.XMLInputFactoryImpl</pattern>
                   <result>com.amazonaws.javax.xml.stream.ZephyrParserFactory</result>
                 </rule>
+
+                <zap>
+                  <pattern>com.amazonaws.services.autoscaling.**</pattern>
+                </zap>
+                <zap>
+                  <pattern>com.amazonaws.services.dynamodb.**</pattern>
+                </zap>
+                <zap>
+                  <pattern>com.amazonaws.services.dynamodbv2.**</pattern>
+                </zap>
+                <zap>
+                  <pattern>com.amazonaws.services.simpleemail.**</pattern>
+                </zap>
+                <zap>
+                  <pattern>com.amazonaws.services.simpledb.**</pattern>
+                </zap>
+                <zap>
+                  <pattern>com.amazonaws.services.sns.**</pattern>
+                </zap>
+                <zap>
+                  <pattern>com.amazonaws.services.s3.**</pattern>
+                </zap>
 
                 <zap>
                   <pattern>org.xml.sax.**</pattern>

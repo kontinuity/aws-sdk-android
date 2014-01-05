@@ -108,7 +108,7 @@ public class AmazonHttpClient {
     private final RequestMetricCollector requestMetricCollector;
 
     private static final HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
-    private static final HttpClientFactory httpClientFactory = new HttpClientFactory();
+    private static final HttpClientFactory httpClientFactory = new OkHttpClientFactory();
 
     static {
         // Customers have reported XML parsing issues with the following
@@ -177,27 +177,27 @@ public class AmazonHttpClient {
      * cert hostname wildcards are evaulated more liberally).
      */
     public void disableStrictHostnameVerification() {
-
-        /*
-         * If SSL cert checking for endpoints is disabled, we don't need
-         * to do any changes to the SSL context.
-         */
-        if (System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY) != null) {
-            return;
-        }
-
-        try {
-            SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
-
-            SSLSocketFactory sf = new SSLSocketFactory(
-                    SSLContext.getDefault(),
-                    SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-            Scheme https = new Scheme("https", 443, sf);
-
-            schemeRegistry.register(https);
-        } catch (NoSuchAlgorithmException e) {
-            throw new AmazonClientException("Unable to access default SSL context to disable strict hostname verification");
-        }
+//
+//        /*
+//         * If SSL cert checking for endpoints is disabled, we don't need
+//         * to do any changes to the SSL context.
+//         */
+//        if (System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY) != null) {
+//            return;
+//        }
+//
+//        try {
+//            SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
+//
+//            SSLSocketFactory sf = new SSLSocketFactory(
+//                    SSLContext.getDefault(),
+//                    SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+//            Scheme https = new Scheme("https", 443, sf);
+//
+//            schemeRegistry.register(https);
+//        } catch (NoSuchAlgorithmException e) {
+//            throw new AmazonClientException("Unable to access default SSL context to disable strict hostname verification");
+//        }
     }
     /**
      * Executes the request and returns the result.
