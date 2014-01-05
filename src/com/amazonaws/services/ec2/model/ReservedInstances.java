@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.types.JsonType;
 
@@ -24,16 +25,13 @@ import java.util.ArrayList;
  * A group of Amazon EC2 Reserved Instances purchased by this account.
  * </p>
  */
-public class ReservedInstances implements Serializable {
+public class ReservedInstances extends BaseModel implements Serializable {
 
     /**
      * The unique ID of the Reserved Instances purchase.
      */
     @DatabaseField(id = true)
     private String reservedInstancesId;
-
-    @DatabaseField(canBeNull = false)
-    private String regionCode;
 
     /**
      * The instance type on which the Reserved Instances can be used.
@@ -1150,14 +1148,6 @@ public class ReservedInstances implements Serializable {
         if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null) return false;
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false) return false; 
         return true;
-    }
-
-    public String getRegionCode() {
-        return regionCode;
-    }
-
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
     }
 }
 

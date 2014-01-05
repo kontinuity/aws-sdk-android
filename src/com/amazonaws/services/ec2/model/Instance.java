@@ -15,6 +15,7 @@
 package com.amazonaws.services.ec2.model;
 
 import com.amazonaws.services.cloudwatch.model.Datapoint;
+import com.amazonaws.services.common.model.BaseModel;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.types.JsonType;
@@ -28,16 +29,13 @@ import java.util.List;
  * Represents an Amazon EC2 instance.
  * </p>
  */
-public class Instance  implements Serializable  {
+public class Instance extends BaseModel implements Serializable {
 
     /**
      * Unique ID of the instance launched.
      */
     @DatabaseField(id = true)
     private String instanceId;
-
-    @DatabaseField(canBeNull = false)
-    private String regionCode;
 
     /**
      * Image ID of the AMI used to launch the instance.
@@ -2334,14 +2332,6 @@ public class Instance  implements Serializable  {
 
     public void setHourlyAverageCPUUtilization(List<Datapoint> hourlyAverageCPUUtilization) {
         this.hourlyAverageCPUUtilization = hourlyAverageCPUUtilization;
-    }
-
-    public String getRegionCode() {
-        return regionCode;
-    }
-
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
     }
 }
     

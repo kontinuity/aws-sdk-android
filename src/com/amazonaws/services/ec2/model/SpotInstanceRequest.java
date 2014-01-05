@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 
+import com.amazonaws.services.common.model.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.types.JsonType;
 
@@ -24,13 +25,10 @@ import java.util.List;
 /**
  * Spot Instance Request
  */
-public class SpotInstanceRequest  implements Serializable  {
+public class SpotInstanceRequest extends BaseModel implements Serializable {
 
     @DatabaseField(id = true)
     private String spotInstanceRequestId;
-
-    @DatabaseField(canBeNull = false)
-    private String regionCode;
 
     @DatabaseField
     private String spotPrice;
@@ -894,14 +892,6 @@ public class SpotInstanceRequest  implements Serializable  {
         if (other.getLaunchedAvailabilityZone() == null ^ this.getLaunchedAvailabilityZone() == null) return false;
         if (other.getLaunchedAvailabilityZone() != null && other.getLaunchedAvailabilityZone().equals(this.getLaunchedAvailabilityZone()) == false) return false; 
         return true;
-    }
-
-    public String getRegionCode() {
-        return regionCode;
-    }
-
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
     }
 
     public List<SpotPrice> getPriceHistory() {
