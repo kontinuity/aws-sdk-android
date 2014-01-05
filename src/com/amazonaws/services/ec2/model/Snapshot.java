@@ -13,24 +13,30 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * Represents a snapshot of an Amazon EC2 EBS volume.
  * </p>
  */
-public class Snapshot implements Serializable {
+public class Snapshot extends BaseModel implements Serializable {
 
     /**
      * The unique ID of this snapshot.
      */
+    @DatabaseField(id = true)
     private String snapshotId;
 
     /**
      * The ID of the volume from which this snapshot was created.
      */
+    @DatabaseField
     private String volumeId;
 
     /**
@@ -39,42 +45,50 @@ public class Snapshot implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, completed, error
      */
+    @DatabaseField
     private String state;
 
     /**
      * Time stamp when the snapshot was initiated.
      */
+    @DatabaseField
     private java.util.Date startTime;
 
     /**
      * The progress of the snapshot, in percentage.
      */
+    @DatabaseField
     private String progress;
 
     /**
      * AWS Access Key ID of the user who owns the snapshot.
      */
+    @DatabaseField
     private String ownerId;
 
     /**
      * Description of the snapshot.
      */
+    @DatabaseField
     private String description;
 
     /**
      * The size of the volume, in gigabytes.
      */
+    @DatabaseField
     private Integer volumeSize;
 
     /**
      * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
      * account ID that owns the AMI.
      */
+    @DatabaseField
     private String ownerAlias;
 
     /**
      * A list of tags for the Snapshot.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
