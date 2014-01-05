@@ -19,6 +19,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
@@ -230,10 +231,10 @@ public class Instance  implements Serializable  {
     /**
      * A list of tags for the Instance.
      */
-    @DatabaseField(persisterClass = JsonType.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
-    @DatabaseField(persisterClass = JsonType.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = GroupIdentifier.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> securityGroups;
 
     @DatabaseField
@@ -242,7 +243,7 @@ public class Instance  implements Serializable  {
     @DatabaseField
     private String hypervisor;
 
-    @DatabaseField(persisterClass = JsonType.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = InstanceNetworkInterface.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterface> networkInterfaces;
 
     @DatabaseField(persisterClass = JsonType.class)

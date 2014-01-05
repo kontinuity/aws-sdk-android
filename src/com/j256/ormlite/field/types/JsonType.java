@@ -1,13 +1,17 @@
 package com.j256.ormlite.field.types;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
+import com.j256.ormlite.field.DatabaseFieldConfig;
 import com.j256.ormlite.field.FieldType;
 import com.j256.ormlite.field.SqlType;
 import com.j256.ormlite.support.DatabaseResults;
 
 import java.sql.SQLException;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Type that persists a {@link java.util.UUID} object.
@@ -46,28 +50,41 @@ public class JsonType extends BaseDataType {
 	}
 
 	@Override
+    @SuppressWarnings("unchecked")
 	public Object sqlArgToJava(FieldType fieldType, Object sqlArg, int columnPos) throws SQLException {
-        return new Gson().fromJson(sqlArg.toString(), fieldType.getType());
+
+        String json = (String) sqlArg;
+        if (json == null || json.length() == 0) {
+            return Collections.emptyList();
+        }
+
+        DatabaseFieldConfig configObj = fieldType.getFieldConfig();
+
+        if (configObj.getItemClass() == null
+            || configObj.getItemClass().equals(Void.class)
+            || configObj.getContainerClass().equals(Void.class)) {
+            return new Gson().fromJson(json, fieldType.getType());
+        } else {
+            Class containerClass = configObj.getContainerClass();
+
+            JsonParser jsonParser = new JsonParser();
+            JsonArray elements = jsonParser.parse(json).getAsJsonArray();
+            Gson gson = new Gson();
+            try {
+                List container = (List) containerClass.newInstance();
+                for (JsonElement je : elements) {
+                    container.add(gson.fromJson(je, configObj.getItemClass()));
+                }
+                return container;
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
 	}
 
-	@Override
+    @Override
 	public Object javaToSqlArg(FieldType fieldType, Object obj) {
         return new Gson().toJson(obj);
-	}
-
-	@Override
-	public boolean isValidGeneratedType() {
-		return true;
-	}
-
-	@Override
-	public boolean isSelfGeneratedId() {
-		return true;
-	}
-
-	@Override
-	public Object generateId() {
-		return UUID.randomUUID();
 	}
 
 	@Override
