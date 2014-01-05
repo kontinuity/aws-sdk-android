@@ -13,42 +13,54 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * An Amazon EC2 security group, describing how EC2 instances in this group can receive network traffic.
  * </p>
  */
-public class SecurityGroup implements Serializable {
+public class SecurityGroup extends BaseModel implements Serializable {
 
     /**
      * The AWS Access Key ID of the owner of the security group.
      */
+    @DatabaseField
     private String ownerId;
 
     /**
      * The name of this security group.
      */
+    @DatabaseField
     private String groupName;
 
+    @DatabaseField(id = true)
     private String groupId;
 
     /**
      * The description of this security group.
      */
+    @DatabaseField
     private String description;
 
     /**
      * The permissions enabled for this security group.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = IpPermission.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = IpPermission.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissionsEgress;
 
+    @DatabaseField
     private String vpcId;
 
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**

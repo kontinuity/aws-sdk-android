@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
 
 import java.io.Serializable;
 
@@ -21,28 +23,36 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class Address implements Serializable {
+public class Address extends BaseModel implements Serializable {
 
     /**
      * 
      */
+    @DatabaseField
     private String instanceId;
 
     /**
      * 
      */
+    @DatabaseField(id = true)
     private String publicIp;
 
+    @DatabaseField
     private String allocationId;
 
+    @DatabaseField
     private String associationId;
 
+    @DatabaseField
     private String domain;
 
+    @DatabaseField
     private String networkInterfaceId;
 
+    @DatabaseField
     private String networkInterfaceOwnerId;
 
+    @DatabaseField
     private String privateIpAddress;
 
     /**
