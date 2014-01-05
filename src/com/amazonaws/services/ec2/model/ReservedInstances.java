@@ -13,8 +13,11 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
@@ -26,7 +29,11 @@ public class ReservedInstances implements Serializable {
     /**
      * The unique ID of the Reserved Instances purchase.
      */
+    @DatabaseField(id = true)
     private String reservedInstancesId;
+
+    @DatabaseField(canBeNull = false)
+    private String regionCode;
 
     /**
      * The instance type on which the Reserved Instances can be used.
@@ -34,16 +41,19 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      */
+    @DatabaseField
     private String instanceType;
 
     /**
      * The Availability Zone in which the Reserved Instances can be used.
      */
+    @DatabaseField
     private String availabilityZone;
 
     /**
      * The date and time the Reserved Instances started.
      */
+    @DatabaseField
     private java.util.Date start;
 
     private java.util.Date end;
@@ -51,21 +61,25 @@ public class ReservedInstances implements Serializable {
     /**
      * The duration of the Reserved Instances, in seconds.
      */
+    @DatabaseField
     private Long duration;
 
     /**
      * The usage price of the Reserved Instances, per hour.
      */
+    @DatabaseField
     private Float usagePrice;
 
     /**
      * The purchase price of the Reserved Instances.
      */
+    @DatabaseField
     private Float fixedPrice;
 
     /**
      * The number of Reserved Instances purchased.
      */
+    @DatabaseField
     private Integer instanceCount;
 
     /**
@@ -75,6 +89,7 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      */
+    @DatabaseField
     private String productDescription;
 
     /**
@@ -83,11 +98,13 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>payment-pending, active, payment-failed, retired
      */
+    @DatabaseField
     private String state;
 
     /**
      * A list of tags for the ReservedInstances.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
@@ -96,6 +113,7 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      */
+    @DatabaseField
     private String instanceTenancy;
 
     /**
@@ -105,6 +123,7 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      */
+    @DatabaseField
     private String currencyCode;
 
     /**
@@ -113,11 +132,13 @@ public class ReservedInstances implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      */
+    @DatabaseField
     private String offeringType;
 
     /**
      * The recurring charge tag assigned to the resource.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = RecurringCharge.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringCharges;
 
     /**
@@ -1130,6 +1151,13 @@ public class ReservedInstances implements Serializable {
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false) return false; 
         return true;
     }
-    
+
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+    }
 }
-    
+
