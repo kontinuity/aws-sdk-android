@@ -13,34 +13,42 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * Represents an Amazon <i>Elastic Block Storage</i> (EBS) volume.
  * </p>
  */
-public class Volume implements Serializable {
+public class Volume extends BaseModel implements Serializable {
 
     /**
      * The unique ID of this volume.
      */
+    @DatabaseField(id = true)
     private String volumeId;
 
     /**
      * The size of this volume, in gigabytes.
      */
+    @DatabaseField
     private Integer size;
 
     /**
      * Optional snapshot from which this volume was created.
      */
+    @DatabaseField
     private String snapshotId;
 
     /**
      * Availability zone in which this volume was created.
      */
+    @DatabaseField
     private String availabilityZone;
 
     /**
@@ -49,25 +57,31 @@ public class Volume implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
      */
+    @DatabaseField
     private String state;
 
     /**
      * Timestamp when volume creation was initiated.
      */
+    @DatabaseField
     private java.util.Date createTime;
 
     /**
      * Information on what this volume is attached to.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = VolumeAttachment.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachments;
 
     /**
      * A list of tags for the Volume.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
+    @DatabaseField
     private String volumeType;
 
+    @DatabaseField
     private Integer iops;
 
     /**

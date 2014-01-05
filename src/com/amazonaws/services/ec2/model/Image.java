@@ -13,24 +13,30 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import com.amazonaws.services.common.model.BaseModel;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.types.JsonType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * <p>
  * Represents an <i>Amazon Machine Image</i> (AMI) that can be run on an Amazon EC2 instance.
  * </p>
  */
-public class Image implements Serializable {
+public class Image extends BaseModel implements Serializable {
 
     /**
      * The unique ID of the AMI.
      */
+    @DatabaseField(id = true)
     private String imageId;
 
     /**
      * The location of the AMI.
      */
+    @DatabaseField
     private String imageLocation;
 
     /**
@@ -42,22 +48,26 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, deregistered
      */
+    @DatabaseField
     private String state;
 
     /**
      * AWS Access Key ID of the image owner.
      */
+    @DatabaseField
     private String ownerId;
 
     /**
      * True if this image has public launch permissions. False if it only has
      * implicit and explicit launch permissions.
      */
+    @DatabaseField
     private Boolean publicValue;
 
     /**
      * Product codes of the AMI.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = ProductCode.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
@@ -66,6 +76,7 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>i386, x86_64
      */
+    @DatabaseField
     private String architecture;
 
     /**
@@ -74,18 +85,21 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>machine, kernel, ramdisk
      */
+    @DatabaseField
     private String imageType;
 
     /**
      * The kernel associated with the image, if any. Only applicable for
      * machine images.
      */
+    @DatabaseField
     private String kernelId;
 
     /**
      * The RAM disk associated with the image, if any. Only applicable for
      * machine images.
      */
+    @DatabaseField
     private String ramdiskId;
 
     /**
@@ -94,6 +108,7 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Windows
      */
+    @DatabaseField
     private String platform;
 
     private String sriovNetSupport;
@@ -101,22 +116,26 @@ public class Image implements Serializable {
     /**
      * The reason for the state change.
      */
+    @DatabaseField(persisterClass = JsonType.class)
     private StateReason stateReason;
 
     /**
      * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
      * account ID that owns the AMI.
      */
+    @DatabaseField
     private String imageOwnerAlias;
 
     /**
      * The name of the AMI that was provided during image creation.
      */
+    @DatabaseField
     private String name;
 
     /**
      * The description of the AMI that was provided during image creation.
      */
+    @DatabaseField
     private String description;
 
     /**
@@ -126,25 +145,31 @@ public class Image implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      */
+    @DatabaseField
     private String rootDeviceType;
 
     /**
      * The root device name (e.g., <code>/dev/sda1</code>).
      */
+    @DatabaseField
     private String rootDeviceName;
 
     /**
      * Specifies how block devices are exposed to the instance.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = BlockDeviceMapping.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
+    @DatabaseField
     private String virtualizationType;
 
     /**
      * A list of tags for the Image.
      */
+    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
+    @DatabaseField
     private String hypervisor;
 
     /**
