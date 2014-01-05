@@ -75,7 +75,7 @@ public class SpotInstanceRequest extends BaseModel implements Serializable {
     /**
      * A list of tags for this spot instance request.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**

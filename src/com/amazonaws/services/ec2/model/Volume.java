@@ -69,13 +69,13 @@ public class Volume extends BaseModel implements Serializable {
     /**
      * Information on what this volume is attached to.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = VolumeAttachment.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = VolumeAttachment.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachments;
 
     /**
      * A list of tags for the Volume.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     @DatabaseField

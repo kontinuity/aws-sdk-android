@@ -67,7 +67,7 @@ public class Image extends BaseModel implements Serializable {
     /**
      * Product codes of the AMI.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = ProductCode.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = ProductCode.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
@@ -157,7 +157,7 @@ public class Image extends BaseModel implements Serializable {
     /**
      * Specifies how block devices are exposed to the instance.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = BlockDeviceMapping.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = BlockDeviceMapping.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     @DatabaseField
@@ -166,7 +166,7 @@ public class Image extends BaseModel implements Serializable {
     /**
      * A list of tags for the Image.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     @DatabaseField

@@ -102,7 +102,7 @@ public class ReservedInstances extends BaseModel implements Serializable {
     /**
      * A list of tags for the ReservedInstances.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
@@ -136,7 +136,7 @@ public class ReservedInstances extends BaseModel implements Serializable {
     /**
      * The recurring charge tag assigned to the resource.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = RecurringCharge.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = RecurringCharge.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringCharges;
 
     /**

@@ -234,10 +234,10 @@ public class Instance extends BaseModel implements Serializable {
     /**
      * A list of tags for the Instance.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = GroupIdentifier.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = GroupIdentifier.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> securityGroups;
 
     @DatabaseField
@@ -246,7 +246,7 @@ public class Instance extends BaseModel implements Serializable {
     @DatabaseField
     private String hypervisor;
 
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = InstanceNetworkInterface.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = InstanceNetworkInterface.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterface> networkInterfaces;
 
     @DatabaseField(persisterClass = JsonType.class)

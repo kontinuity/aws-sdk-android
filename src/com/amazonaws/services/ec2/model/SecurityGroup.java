@@ -51,16 +51,16 @@ public class SecurityGroup extends BaseModel implements Serializable {
     /**
      * The permissions enabled for this security group.
      */
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = IpPermission.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = IpPermission.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = IpPermission.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = IpPermission.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissionsEgress;
 
     @DatabaseField
     private String vpcId;
 
-    @DatabaseField(persisterClass = JsonType.class, containerClass = ArrayList.class, itemClass = Tag.class)
+    @DatabaseField(persisterClass = JsonType.class, containerClass = com.amazonaws.internal.ListWithAutoConstructFlag.class, itemClass = Tag.class)
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
